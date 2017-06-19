@@ -1,7 +1,7 @@
 ## Component Hierarchy
 
 **ABOUT TOP AND BOTTOM**
-
+========================
 **HeaderContainerComponent**
 - MainNavigation
 - Search
@@ -10,7 +10,7 @@
 - Navigation
 
 **ABOUT FRONTEND AUTH**
-
+=======================
 **SignUpContainer**
  - SignUpForm
 
@@ -22,7 +22,7 @@
  - ImageIndex
 
 **ABOUT IMAGES**
-
+================
 **ImageIndexContainerComponent**
  - ImageIndexItem
 
@@ -50,7 +50,7 @@
   - Timestamp
 
 **ABOUT USERS**
-
+===============
 **UserProfileContainerComponent**
  - Navigation
  - UserDetails
@@ -63,7 +63,7 @@
   - Profile Photo
 
 **ABOUT USERS AND IMAGES**
-
+==========================
 **LikesContainer**
   - Likes
 
