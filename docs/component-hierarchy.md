@@ -1,73 +1,74 @@
-Component Hierarchy
+## Component Hierarchy
 
-SignUpContainer
- -SignUpForm
+**SignUpContainer**
+ - SignUpForm
 
-SignInContainer
- -SignInForm
+**SignInContainer**
+ - SignInForm
 
- MainContainer
- -Header
- -ImageIndex
+ **MainContainer**
+ - Header
+ - ImageIndex
 
-HeaderContainer
- -MainNavigation
-  -SearchBar
+**HeaderContainer**
+  - MainNavigation
+  - Search
 
-ImageIndexContainer
- -ImageIndexItem
+**ImageIndexContainer**
+ - ImageIndexItem
 
-ImageIndexItemContainer
-  -Profile Photo
-  -ImageIndexItem Username
-  -Image
-  -Like Button
-  -Comment Button
-  -User Likes Total
-  -Hashtags
-  -Body Caption
-  -Timestamps
+**ImageIndexItemContainer**
+  - Profile Photo
+  - ImageIndexItem Username
+  - Image
+  - Like Button
+  - Comment Button
+  - User Likes Total
+  - Hashtags
+  - Body Caption
+  - Timestamps
 
-UserProfileContainer
- -NavBar
- -UserDetails
+**UserProfileContainer**
+ - Navigation
+ - UserDetails
 
-UserDetailsContainer
-  -Individual User Detail
+**UserDetailsContainer**
+  - Individual User Detail
 
-EditProfileContainer
-  -Navigation
-  -Profile Photo
-
-
-ImageDetailContainer
-  -Image
-  -Delete Image
-  -Image Comments
-  -Image Likes
-  -Profile Photo
-  -Username who posts
-  -Captions
-  -Hashtags
-  -Like/Comment Submits
-  -Timestamp
+**EditProfileContainer**
+  - Navigation
+  - Profile Photo
 
 
-LikesContainer
-  -Likes
+**ImageDetailContainer**
+  - Image
+  - Delete Image
+  - Image Comments
+  - Image Likes
+  - Profile Photo
+  - Username who posts
+  - Captions
+  - Hashtags
+  - Like/Comment Submits
+  - Timestamp
 
-CommentsContainer
-  -Comments
 
-FollowsContainer
-  -Follows
+**LikesContainer**
+  - Likes
 
-ROUTES
-ORGANIZED BY:
+**CommentsContainer**
+  - Comments
+
+**FollowsContainer**
+  - Follows
+
+## ROUTES
+
 
 PATH | COMPONENT
-/sign-up	AuthFormContainer
-/sign-in	AuthFormContainer
-/	MainContainer
-/:username	UserProfileContainer
-/account/edit/	EditProfileContainer
+------------|-----------|
+/sign-up	|AuthFormContainer|
+/sign-in	|AuthFormContainer|
+/	MainContainer|
+/:username	|UserProfileContainer|
+/account/edit/	|EditProfileContainer|
