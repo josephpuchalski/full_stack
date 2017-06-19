@@ -24,9 +24,9 @@ ImageIndexItemContainer
   -Like Button
   -Comment Button
   -User Likes Total
-  -Caption & Hashtags
-  -Timestamp
-  -Comments
+  -Hashtags
+  -Body Caption
+  -Timestamps
 
 UserProfileContainer
  -NavBar
@@ -36,8 +36,8 @@ UserDetailsContainer
   -Individual User Detail
 
 EditProfileContainer
--Navigation
--Profile Photo
+  -Navigation
+  -Profile Photo
 
 
 ImageDetailContainer
