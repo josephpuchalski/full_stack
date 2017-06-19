@@ -17,11 +17,11 @@ Travelscape is a web application inspired by Instagram built using Ruby on Rails
 
  BONUS:
  * Intelligent Search
- - Hash Tags
- - Username
+  + Hash Tags
+  + Username
  * Direct Messaging
- - Private one-to-one conversation
- - Group Chat
+  + Private one-to-one conversation
+  + Group Chat
 
 ## Design Docs
 
