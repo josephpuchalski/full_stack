@@ -13,16 +13,13 @@ password_digest|	string|	not null
 session_token	|string	|not null, indexed, unique
 name	|string|
 bio	|text|
-profile_photo|string|
 
-## PHOTOS
+## POSTS
 column name | data type | details
 ------------|-----------|-----------------------
 id	|integer	|not null, primary key, unique
 caption	|string
 user_id	|integer	|not null, foreign key, indexed
-photo	|string|	not null
-
 
 ## LIKES
 column name | data type | details
