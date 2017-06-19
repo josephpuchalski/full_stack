@@ -17,12 +17,12 @@
 **SignInContainer**
  - SignInForm
 
- **MainContainer**
- - Header
- - ImageIndex
-
 **ABOUT IMAGES**
 ================
+**MainContainer**
+- Header
+- ImageIndex
+
 **ImageIndexContainerComponent**
  - ImageIndexItem
 
