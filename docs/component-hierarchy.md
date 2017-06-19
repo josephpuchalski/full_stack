@@ -1,5 +1,16 @@
 ## Component Hierarchy
 
+**ABOUT TOP AND BOTTOM**
+
+**HeaderContainerComponent**
+- MainNavigation
+- Search
+
+**FooterContainerComponent**
+- Navigation
+
+**ABOUT FRONTEND AUTH**
+
 **SignUpContainer**
  - SignUpForm
 
@@ -10,14 +21,12 @@
  - Header
  - ImageIndex
 
-**HeaderContainer**
-  - MainNavigation
-  - Search
+**ABOUT IMAGES**
 
-**ImageIndexContainer**
+**ImageIndexContainerComponent**
  - ImageIndexItem
 
-**ImageIndexItemContainer**
+**ImageIndexItemContainerComponent**
   - Profile Photo
   - ImageIndexItem Username
   - Image
@@ -28,19 +37,7 @@
   - Body Caption
   - Timestamps
 
-**UserProfileContainer**
- - Navigation
- - UserDetails
-
-**UserDetailsContainer**
-  - Individual User Detail
-
-**EditProfileContainer**
-  - Navigation
-  - Profile Photo
-
-
-**ImageDetailContainer**
+  **ImageDetailContainerComponent**
   - Image
   - Delete Image
   - Image Comments
@@ -52,6 +49,20 @@
   - Like/Comment Submits
   - Timestamp
 
+**ABOUT USERS**
+
+**UserProfileContainerComponent**
+ - Navigation
+ - UserDetails
+
+**UserDetailsContainerComponent**
+  - Individual User Detail
+
+**EditProfileContainerComponent**
+  - Navigation
+  - Profile Photo
+
+**ABOUT USERS AND IMAGES**
 
 **LikesContainer**
   - Likes
@@ -69,6 +80,6 @@ PATH | COMPONENT
 ------------|-----------|
 /sign-up	|AuthFormContainer|
 /sign-in	|AuthFormContainer|
-/	MainContainer|
+/	| MainContainer|
 /:username	|UserProfileContainer|
 /account/edit/	|EditProfileContainer|
