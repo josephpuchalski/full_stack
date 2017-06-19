@@ -26,7 +26,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id	|integer	|not null, primary key, unique
 user_id	|integer	|not null, foreign key, indexed, unique combined with photo_id
-photo_id	|integer	|not null, foreign key, indexed, unique combined with user_id
+post_id	|integer	|not null, foreign key, indexed, unique combined with user_id
 
 ## COMMENTS
 column name | data type | details
@@ -34,7 +34,7 @@ column name | data type | details
 id	|integer	|not null, primary key, unique
 body	|string|	not null
 user_id	|integer|	not null, foreign key, indexed
-photo_id	|integer|	not null, foreign key, indexed
+post_id	|integer|	not null, foreign key, indexed
 
 ## FOLLOWS
 column name | data type | details
