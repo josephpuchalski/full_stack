@@ -1,19 +1,19 @@
 # Travelscape
 
-Heroku link - coming soon
-Trello link
+- Heroku link - coming soon
+- Trello link
 
 ## Minimum Viable Product
 
 Travelscape is a web application inspired by Instagram built using Ruby on Rails and React/Redux. In two weeks, this app will meet all of the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
- Hosting on Heroku
- New account creation, login, and guest/demo login
- Upload/Delete Photos
- User Profiles
- Ability to Like and Comment Photo Posts
- Able to follow other users
- Photo Feed and Show Page Infinite Scroll
+ - Hosting on Heroku
+ - New account creation, login, and guest/demo login
+ - Upload/Delete Photos
+ - User Profiles
+ - Ability to Like and Comment Photo Posts
+ - Able to follow other users
+ - Photo Feed and Show Page Infinite Scroll
 
  BONUS:
  Intelligent Search
