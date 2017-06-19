@@ -111,7 +111,7 @@
   search: {
     1: {
       id: 1,
-      username: "JoeyP",
+      username: "Joey",
       name: "JoeyP",
       profilePic: "joseph_puchalski.png"
   },

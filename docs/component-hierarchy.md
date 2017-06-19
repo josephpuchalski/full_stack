@@ -11,18 +11,19 @@ SignInContainer
  -ImageIndex
 
 HeaderContainer
- -NavBar
- -SearchBar
+ -MainNavigation
+  -SearchBar
 
 ImageIndexContainer
  -ImageIndexItem
 
 ImageIndexItemContainer
-  -Profile Picture Thumbnail
+  -Profile Photo
   -ImageIndexItem Username
   -Image
-  -Like Button & Comment Button
-  -User Likes & Count
+  -Like Button
+  -Comment Button
+  -User Likes Total
   -Caption & Hashtags
   -Timestamp
   -Comments
@@ -35,8 +36,8 @@ UserDetailsContainer
   -Individual User Detail
 
 EditProfileContainer
--NavBar
--Profile Picture Thumbnail
+-Navigation
+-Profile Photo
 
 
 ImageDetailContainer
@@ -44,7 +45,7 @@ ImageDetailContainer
   -Delete Image
   -Image Comments
   -Image Likes
-  -Profile Picture Thumbnail
+  -Profile Photo
   -Username who posts
   -Captions
   -Hashtags
