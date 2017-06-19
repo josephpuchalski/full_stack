@@ -9,18 +9,18 @@ METHOD | URI | DESCRIPTION
 ### Root
 METHOD | URI | DESCRIPTION
 -------|-----|------------
-  - GET |	/	|Loads React Web App
+  GET |	/	|Loads React Web App
 
 ## JSON API
 
 ### Users
 METHOD | URI | DESCRIPTION
 -------|-----|------------
-  - GET|	/	|Loads React Web App
-  - POST	|/api/users|	Create new user
-  - GET	|/api/users/:id	|Get user by username/id
-  - PATCH	|/api/users/:id	|Edit user
-  - GET	|/api/users/search	|Search user via key
+  GET|	/	|Loads React Web App
+  POST	|/api/users|	Create new user
+  GET	|/api/users/:id	|Get user by username/id
+  PATCH	|/api/users/:id	|Edit user
+  GET	|/api/users/search	|Search user via key
 
 ### Session
 METHOD | URI | DESCRIPTION
