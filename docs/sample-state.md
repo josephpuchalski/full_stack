@@ -43,14 +43,14 @@
     name: "Joseph Puchalski",
     bio: "Learning to code",
     hasProfilePhoto: true,
-    profilePic: "joseph_puchalski.jpg",
+    profilePhoto: "joseph_puchalski.jpg",
     followersCount: 30000,
     followers: {
       1: {
         id: 1,
         username: 'smith',
         name: 'smith jones',
-        profilePic: 'smith_jones.png',
+        profilePhoto: 'smith_jones.png',
         currentUserFollowed: true,
         createdAt: "timestamp"
       },
@@ -61,7 +61,7 @@
         id: 1,
         username: 'john',
         name: 'johnny',
-        profilePic: 'john.jpg',
+        profilePhoto: 'john.jpg',
         currentUserFollowed: true,
         createdAt: "timestamp"
       }
@@ -69,7 +69,7 @@
     photos: {
       1: {
         id: 1,
-        urlMedium: "my_travels.jpg",
+        url: "my_travels.jpg",
         createdAt: "timestamp",
         likesCount: 100,
         commentsCount: 32
@@ -80,7 +80,7 @@
   photoInfo: {
     id: 1,
     username: "Joey P",
-    profilePic: "joeph_puchalski_profile.jpg",
+    profilePhoto: "joeph_puchalski_profile.jpg",
     url: "traveling_man.jpg",
     caption: "new place every day",
     createdAt: "timestamp",
@@ -105,7 +105,7 @@
   },
   errors: {
     photoUpload: [],
-    profilePicUpload: [],
+    profilePhotoUpload: [],
     accountEdit: ["Username is required"],
     accountPassword: ["Invalid password..."]
   },
@@ -115,14 +115,14 @@
       id: 1,
       username: "Joey",
       name: "JoeyP",
-      profilePic: "joseph_puchalski.png"
+      profilePhoto: "joseph_puchalski.png"
   },
   users: {
     1: {
       id: 1,
       username: "Joey",
       name: "JoeyP",
-      profilePic: "joseph_puchalski.jpg",
+      profilePhoto: "joseph_puchalski.jpg",
       currentUserFollowed: false
     },
   }
