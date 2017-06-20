@@ -52,7 +52,7 @@ METHOD | URI | DESCRIPTION
 ### Follows
 METHOD | URI | DESCRIPTION
 -------|-----|------------
-  GET	|/api/users/:user_id/following	|Get all users you follow
-  GET	|/api/users/:user_id/followers	|Get all followers
+  GET	|/api/users/	| Get all users you follow through associations
+  GET	|/api/users/	| Get all users that follow you through associations
   POST	|/api/users/:user_id/follows	|Enable following of another user
   DELETE	|/api/users/:user_id/follows| Unfollow a user
