@@ -48,9 +48,9 @@ Travelscape is a web application inspired by Instagram built using Ruby on Rails
 
   **Objective:** Highly detailed overview of how to use the app with wireframe support.
 
-### Phase 4: Images Model, API, and components (2 days)
+### Phase 4: Posts Model, APIs, and components (2 days)
 
-  **Objective:** Images can be created, read, edited and destroyed through the API.
+  **Objective:** Posts can be created, read, edited and destroyed through the API.
 
 ### Phase 5: Interactive Like Counter (1 days)
 
