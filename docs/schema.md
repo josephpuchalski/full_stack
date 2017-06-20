@@ -12,7 +12,7 @@ username	|string	|not null, indexed, unique
 password_digest|	string|	not null
 session_token	|string	|not null, indexed, unique
 name	|string|
-bio	|text|
+bio	|string|
 
 ## POSTS
 column name | data type | details
