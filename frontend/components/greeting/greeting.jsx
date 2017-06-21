@@ -29,11 +29,3 @@ class Greeting extends React.Component {
 }
 
 export default Greeting;
-
-
-
-// <section>
-//   <Link to='/signup'>Sign Up</Link>
-//   <br />
-//   <Link to="/login">Log In</Link>
-// </section>
