@@ -20,7 +20,9 @@ class Greeting extends React.Component {
         );
     } else {
       return (
-        <AuthRoute component={SessionFormContainer} />
+        <section className="signup-login-container">
+          <AuthRoute component={SessionFormContainer} />
+        </section>
       );
     }
   }

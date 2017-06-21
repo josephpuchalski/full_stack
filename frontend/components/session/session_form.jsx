@@ -53,11 +53,11 @@ class SessionForm extends React.Component {
   navLink() {
     if (this.state.showSignUp) {
       return (
-        <p>Have an account?<Link onClick={this.toggleSignUp} to="/">Log in</Link></p>
+        <p>Have an account?&nbsp;<Link onClick={this.toggleSignUp} to="/">Log in</Link></p>
         );
     } else {
       return (
-        <p>Don't have an account?<Link onClick={this.toggleSignUp} to="/">Sign up</Link></p>
+        <p>Don't have an account?&nbsp;<Link onClick={this.toggleSignUp} to="/">Sign up</Link></p>
         );
     }
   }
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
 
     if (this.state.showSignUp) {
       return (
-        <section className="signup-form-container">
+        <section className="signup-container">
           <h1>Travelscape</h1>
           <h3>Sign up to see photos and videos from your friends.</h3>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
@@ -111,16 +111,18 @@ class SessionForm extends React.Component {
                     className="signup-input"
                   />
                 <br/>
-              <input type="submit" value="Sign up" />
+              <input className="form-button" type="submit" value="Sign up" />
               {this.renderErrors()}
             </div>
           </form>
+          <section className="change-form">
           {this.navLink()}
+          </section>
         </section>
       );
     } else {
     return (
-      <div className="login-form-container">
+      <div className="login-container">
         <h1>Travelscape</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
@@ -138,11 +140,13 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             <br/>
-            <input type="submit" value="Log in" />
+            <input className="form-button" type="submit" value="Log in" />
           </div>
           {this.renderErrors()}
         </form>
+        <section className="change-form">
         {this.navLink()}
+        </section>
       </div>
     );
   }}

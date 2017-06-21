@@ -3,11 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1 {
-  font-size: 25px;
+  font-size: 36px;
+}
+
+body {
+  background-color: #fafafa;
 }
 
 h3 {
   font-size:18px;
+  color: #999;
 }
 
 ul {
@@ -16,4 +21,60 @@ ul {
 li {
   color: red;
   list-style: none;
+}
+
+
+.signup-container, .login-container, .change-form {
+  width: 350px;
+  border: 1px solid silver;
+  background-color:white;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  padding-top: 10px 0;
+}
+
+input {
+  width: 270px;
+  height: 30px;
+  margin: 5px 0;
+  color: #efefef;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 14px;
+
+}
+
+.form-button {
+  width: 270px;
+  height: 30px;
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+p {
+color: #262626;
+}
+
+a {
+  text-decoration: none;
+}
+
+.signup-login-container {
+  display: flex;
+  justify-content: center;
 }
