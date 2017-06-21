@@ -21,6 +21,8 @@ class Greeting extends React.Component {
     } else {
       return (
         <section className="signup-login-container">
+          <section className="logo">
+          </section>
           <AuthRoute component={SessionFormContainer} />
         </section>
       );
@@ -28,4 +30,5 @@ class Greeting extends React.Component {
   }
 }
 
+// <img src="assets/main-image.png" />
 export default Greeting;

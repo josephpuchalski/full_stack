@@ -62,6 +62,26 @@ input {
 
 }
 
+.guest-button {
+  position: relative;
+  right: 30px;
+  width:283px;
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .form-button {
   width: 270px;
   height: 30px;
@@ -112,10 +132,15 @@ a:link, a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin: 5%;
 }
 
 .errors-container {
   width: 270px;
 
+}
+
+
+input[type="text"], input[type="password"], textarea, select {
+    outline: none;
 }

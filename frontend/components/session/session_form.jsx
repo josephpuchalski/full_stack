@@ -30,6 +30,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger;
     e.preventDefault();
     const user = this.state;
     if (this.state.showSignUp) {
@@ -83,7 +84,11 @@ class SessionForm extends React.Component {
           <h1>Travelscape</h1>
           <div className="motto">
             <h3>Sign up to see photos and videos from your friends.</h3>
+              <form onSubmit={this.handleSubmit} className="guest-login">
+                <input className="guest-button" type="submit" value="Guest Log in" />
+              </form>
           </div>
+
           <form onSubmit={this.handleSubmit} className="signup-form-box">
             <div className="signup-form">
                 <input type="text"
