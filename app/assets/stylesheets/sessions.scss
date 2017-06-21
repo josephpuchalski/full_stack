@@ -103,6 +103,10 @@ input {
   margin-top: 5px;
 }
 
+.form-button:hover, .guest-button:hover {
+  cursor: pointer;
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #999999;
 }
