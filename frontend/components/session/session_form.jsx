@@ -11,8 +11,10 @@ class SessionForm extends React.Component {
       email: '',
       showSignUp: true,
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleSignUp = this.toggleSignUp.bind(this);
+    this.clearErrors = this.props.clearErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,7 +32,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    if (this.showSignUp) {
+    if (this.state.showSignUp) {
       this.props.signup({user});
     } else {
       this.props.login({user});
@@ -39,8 +41,10 @@ class SessionForm extends React.Component {
 
   toggleSignUp() {
     if (this.state.showSignUp) {
+      this.clearErrors();
       this.setState({showSignUp: false});
     } else {
+      this.clearErrors();
       this.setState({showSignUp: true});
     }
   }
