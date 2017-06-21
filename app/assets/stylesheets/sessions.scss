@@ -36,7 +36,8 @@ li {
   background-color:white;
   display:flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
+  align-items: center;
 }
 
 .change-form {
@@ -110,4 +111,10 @@ a:link, a:visited {
 .signup-login-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.errors-container {
+  width: 270px;
+
 }

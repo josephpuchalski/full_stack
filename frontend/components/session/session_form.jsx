@@ -115,7 +115,9 @@ class SessionForm extends React.Component {
                   />
                 <br/>
               <input className="form-button" type="submit" value="Sign up" />
-              {this.renderErrors()}
+              <section className="errors-container">
+                {this.renderErrors()}
+              </section>
             </div>
           </form>
         </section>
@@ -147,7 +149,9 @@ class SessionForm extends React.Component {
             <br/>
             <input className="form-button" type="submit" value="Log in" />
           </div>
-          {this.renderErrors()}
+          <section className="errors-container">
+            {this.renderErrors()}
+          </section>
         </form>
       </section>
         <section className="change-form">
