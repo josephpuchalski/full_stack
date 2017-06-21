@@ -1,7 +1,6 @@
 # Travelscape
 
-- Heroku link - coming soon
-- Trello link
+- Heroku: http://travelscape2.herokuapp.com
 
 ## Minimum Viable Product
 
