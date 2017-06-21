@@ -30,14 +30,16 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
-    const user = this.state;
-    if (this.state.showSignUp) {
-      this.props.signup({user});
-    } else {
-      this.props.login({user});
-    }
+      const user = this.state;
+      if (e.currentTarget.className === "guest-login") {
+        this.props.login({user:{username: "admin", password: 123456}});
+      } else if (this.state.showSignUp) {
+        this.props.signup({user});
+      }
+      else {
+        this.props.login({user});
+      }
   }
 
   toggleSignUp() {
@@ -85,7 +87,7 @@ class SessionForm extends React.Component {
           <div className="motto">
             <h3>Sign up to see photos and videos from your friends.</h3>
               <form onSubmit={this.handleSubmit} className="guest-login">
-                <input className="guest-button" type="submit" value="Guest Log in" />
+                <input className="guest-button" type="submit" value="Demo Login" />
               </form>
           </div>
 
