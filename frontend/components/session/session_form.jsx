@@ -6,9 +6,13 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      name: '',
+      email: '',
+      showSignUp: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleSignUp = this.toggleSignUp.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,14 +30,31 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    if (this.showSignUp) {
+      this.props.signup({user});
+    } else {
+      this.props.login({user});
+    }
   }
 
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+  toggleSignUp() {
+    if (this.state.showSignUp) {
+      this.setState({showSignUp: false});
     } else {
-      return <Link to="/login">log in instead</Link>;
+      this.setState({showSignUp: true});
+    }
+  }
+
+
+  navLink() {
+    if (this.state.showSignUp) {
+      return (
+        <p>Have an account?<Link onClick={this.toggleSignUp} to="/">Log in</Link></p>
+        );
+    } else {
+      return (
+        <p>Don't have an account?<Link onClick={this.toggleSignUp} to="/">Sign up</Link></p>
+        );
     }
   }
 
@@ -50,36 +71,77 @@ class SessionForm extends React.Component {
   }
 
   render() {
+
+    if (this.state.showSignUp) {
+      return (
+        <section className="signup-form-container">
+          <h1>Travelscape</h1>
+          <h3>Sign up to see photos and videos from your friends.</h3>
+          <form onSubmit={this.handleSubmit} className="signup-form-box">
+            <div className="signup-form">
+                <input type="text"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="signup-input"
+                />
+              <br/>
+                <input type="text"
+                  placeholder="Full Name"
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  className="signup-input"
+                />
+              <br/>
+                  <input type="text"
+                    placeholder="Username"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="signup-input"
+                  />
+                <br/>
+                  <input type="password"
+                    placeholder="Password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="signup-input"
+                  />
+                <br/>
+              <input type="submit" value="Sign up" />
+              {this.renderErrors()}
+            </div>
+          </form>
+          {this.navLink()}
+        </section>
+      );
+    } else {
     return (
       <div className="login-form-container">
+        <h1>Travelscape</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
           <div className="login-form">
-            <br/>
-            <label>Username:
               <input type="text"
+                placeholder="Username"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
               />
-            </label>
             <br/>
-            <label>Password:
               <input type="password"
+                placeholder="Password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-            </label>
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Log in" />
           </div>
+          {this.renderErrors()}
         </form>
+        {this.navLink()}
       </div>
     );
-  }
+  }}
 }
 
 export default withRouter(SessionForm);

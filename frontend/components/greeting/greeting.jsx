@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {AuthRoute} from '../../util/route_util';
+import SessionFormContainer from '../session/session_form_container';
 
 class Greeting extends React.Component {
 
@@ -11,20 +13,25 @@ class Greeting extends React.Component {
     if (this.props.currentUser) {
       return (
         <section>
+          <span><i className="fa fa-camera-retro"></i></span>
           <h1>Hello, {this.props.currentUser.username}</h1>
           <button onClick={this.props.logout}>Log out</button>
         </section>
         );
     } else {
       return (
-        <section>
-          <Link to='/signup'>Sign Up</Link>
-          <br />
-          <Link to="/login">Log In</Link>
-        </section>
+        <AuthRoute component={SessionFormContainer} />
       );
     }
   }
 }
 
 export default Greeting;
+
+
+
+// <section>
+//   <Link to='/signup'>Sign Up</Link>
+//   <br />
+//   <Link to="/login">Log In</Link>
+// </section>
