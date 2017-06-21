@@ -4,6 +4,9 @@
 
 h1 {
   font-size: 36px;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  margin-top: 35px;
 }
 
 body {
@@ -23,15 +26,27 @@ li {
   list-style: none;
 }
 
+.motto {
+  width: 220px;
+}
 
-.signup-container, .login-container, .change-form {
+.signup-container, .login-container {
   width: 350px;
   border: 1px solid silver;
   background-color:white;
   display:flex;
   flex-wrap: wrap;
   justify-content:center;
-  padding-top: 10px 0;
+}
+
+.change-form {
+  width: 350px;
+  border: 1px solid silver;
+  background-color:white;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  margin-top: 10px;
 }
 
 input {
@@ -64,10 +79,23 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  margin-top: 5px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #999999;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #999999;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #999999;
 }
 
 p {
 color: #262626;
+margin: 30px;
+font-size:14px;
 }
 
 a {

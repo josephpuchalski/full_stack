@@ -78,9 +78,12 @@ class SessionForm extends React.Component {
 
     if (this.state.showSignUp) {
       return (
-        <section className="signup-container">
+        <section>
+          <section className="signup-container">
           <h1>Travelscape</h1>
-          <h3>Sign up to see photos and videos from your friends.</h3>
+          <div className="motto">
+            <h3>Sign up to see photos and videos from your friends.</h3>
+          </div>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
             <div className="signup-form">
                 <input type="text"
@@ -115,6 +118,7 @@ class SessionForm extends React.Component {
               {this.renderErrors()}
             </div>
           </form>
+        </section>
           <section className="change-form">
           {this.navLink()}
           </section>
@@ -122,7 +126,8 @@ class SessionForm extends React.Component {
       );
     } else {
     return (
-      <div className="login-container">
+      <section>
+        <section className="signup-container">
         <h1>Travelscape</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
@@ -144,10 +149,11 @@ class SessionForm extends React.Component {
           </div>
           {this.renderErrors()}
         </form>
+      </section>
         <section className="change-form">
         {this.navLink()}
         </section>
-      </div>
+      </section>
     );
   }}
 }
