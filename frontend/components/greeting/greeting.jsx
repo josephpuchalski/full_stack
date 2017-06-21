@@ -13,9 +13,9 @@ class Greeting extends React.Component {
     if (this.props.currentUser) {
       return (
         <section>
-          <span><i className="fa fa-camera-retro"></i></span>
           <h1>Hello, {this.props.currentUser.username}</h1>
           <button onClick={this.props.logout}>Log out</button>
+          <h1>THIS IS NOW WHERE THE PHOTO FEED WILL SHOW UP</h1>
         </section>
         );
     } else {
