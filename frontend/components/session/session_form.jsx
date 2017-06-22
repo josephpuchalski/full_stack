@@ -83,7 +83,7 @@ class SessionForm extends React.Component {
       return (
         <section>
           <section className="signup-container">
-          <h1>Travelscape</h1>
+          <h1 className="main-text-logo">Travelscape</h1>
           <div className="motto">
             <h3>Sign up to see photos and videos from your friends.</h3>
               <form onSubmit={this.handleSubmit} className="guest-login">
@@ -137,7 +137,7 @@ class SessionForm extends React.Component {
     return (
       <section>
         <section className="signup-container">
-        <h1>Travelscape</h1>
+        <h1 className="main-text-logo">Travelscape</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
               <input type="text"

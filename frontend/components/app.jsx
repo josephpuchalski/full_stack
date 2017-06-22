@@ -5,11 +5,9 @@ import { Route } from 'react-router-dom';
 import {AuthRoute} from '../util/route_util';
 
 const App = () => (
-  <section>
-    <header>
+  <div>
       <GreetingContainer />
-    </header>
-  </section>
+  </div>
 );
 
 // <AuthRoute exact path="/login" component={SessionFormContainer} />

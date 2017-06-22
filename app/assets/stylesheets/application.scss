@@ -14,15 +14,33 @@
  *= require_self
  */
 
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ .main-nav-logo {
+  font-weight: 700;
+  position:relative;
+  font-family: 'Qwigley', cursive;
+  font-size:40px;
+  display: flex;
+  margin-top: 0;
+ }
+
+ .main-text-logo {
+   position:relative;
+   top:5px;
+   right: 5px;
+   font-family: 'Qwigley', cursive;
+   font-size: 65px;
+   -webkit-margin-before: 0em;
+   -webkit-margin-after: 0em;
+   margin-top: 35px;
+ }
 
 body {
   font-family: 'Roboto', sans-serif;
 }
 
-header {
-  width: 100%;
-  height: 100%;
-}
 
 .logo {
   width: 374px;

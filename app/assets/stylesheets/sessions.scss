@@ -2,6 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.main-navigation {
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  border-bottom: 1px solid #dbdbdb;
+  background-color:white;
+  display: flex;
+  justify-content: space-between;;
+}
+
+.left-nav, .middle-nav, .right-nav {
+  width:33%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.left-nav h1 {
+ margin-left: 25px;
+}
+
+.left-nav i {
+  margin-left: 100px;
+}
+
+.middle-nav input {
+  background-color: #efefef;
+  text-align: center;
+}
+.right-nav i {
+  margin: 0 18px;
+}
+
+i {
+  cursor: pointer;
+}
+
 h1 {
   font-size: 36px;
   -webkit-margin-before: 0em;
@@ -25,6 +62,7 @@ li {
   color: red;
   list-style: none;
 }
+
 
 .motto {
   width: 220px;
@@ -65,7 +103,7 @@ input {
 .guest-button {
   position: relative;
   right: 30px;
-  width:283px;
+  width:270px;
   background: #3897f0;
   border-color: #3897f0;
   color: #fff;
@@ -80,10 +118,11 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
 }
 
 .form-button {
-  width: 270px;
+  width: 0px;
   height: 30px;
   background: #3897f0;
   border-color: #3897f0;
@@ -101,6 +140,9 @@ input {
   white-space: nowrap;
   width: 100%;
   margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 0px;
+  text-align:center;
 }
 
 .form-button:hover, .guest-button:hover {
@@ -123,12 +165,12 @@ margin: 30px;
 font-size:14px;
 }
 
-a {
+.signup-container a {
   text-decoration: none;
   color: dodgerblue;
 }
 
-a:link, a:visited {
+.signup-container a:link, a:visited {
     color: dodgerblue;
 }
 
@@ -141,7 +183,7 @@ a:link, a:visited {
 
 .errors-container {
   width: 270px;
-
+  margin-bottom: 15px;
 }
 
 
