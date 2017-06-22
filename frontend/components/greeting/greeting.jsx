@@ -13,9 +13,7 @@ class Greeting extends React.Component {
   render () {
     if (this.props.currentUser) {
       return (
-        <section>
           <NavBar props={this.props}/>
-        </section>
         );
     } else {
       return (

@@ -1,9 +1,45 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ @import "reset/css_reset.scss";
+
+.main-nav-logo {
+ font-weight: 700;
+ position:relative;
+ font-family: 'Qwigley', cursive;
+ font-size:40px;
+ display: flex;
+ margin-top: 0;
+}
+
+.main-text-logo {
+  position:relative;
+  top:5px;
+  right: 5px;
+  font-family: 'Qwigley', cursive;
+  font-size: 65px;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  margin-top: 35px;
+}
+
+body {
+ font-family: 'Roboto', sans-serif;
+}
+
+
+.logo {
+ width: 374px;
+ height: 588px;
+ position:relative;
+ top:100px;
+ right: 30px;
+ background: image-url("main-image.png")
+}
 
 .main-navigation {
   position: fixed;
+  top:0;
   width: 100%;
   height: 75px;
   border-bottom: 1px solid #dbdbdb;
@@ -190,4 +226,10 @@ font-size:14px;
 
 input[type="text"], input[type="password"], textarea, select {
     outline: none;
+}
+
+.render-fix {
+  position:relative;
+  z-index: -1;
+  top: 50px;
 }
