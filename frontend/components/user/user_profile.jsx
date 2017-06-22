@@ -6,9 +6,13 @@ class UserProfile extends React.Component {
     super(props);
   }
 
+  componentDidMount () {
+
+  }
   render () {
     return (
     <div className="render-fix">
+      <h1>THIS IS WHERE THE USER PROFILE INFORMATION WILL GO</h1>
     </div>
     );
   }

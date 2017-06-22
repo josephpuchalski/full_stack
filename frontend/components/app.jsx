@@ -8,7 +8,7 @@ import UserProfileContainer from './user/user_profile_container';
 const App = () => (
   <div>
       <GreetingContainer />
-      <Route exact path='/:id' component={UserProfileContainer} />
+      <Route exact path='/:username' component={UserProfileContainer} />
   </div>
 );
 

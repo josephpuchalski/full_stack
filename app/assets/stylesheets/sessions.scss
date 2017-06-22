@@ -231,5 +231,6 @@ input[type="text"], input[type="password"], textarea, select {
 .render-fix {
   position:relative;
   z-index: -1;
-  top: 50px;
+  top: 100px;
+  text-align: center;
 }

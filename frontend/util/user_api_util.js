@@ -1,7 +1,6 @@
 export const getUser = id => (
   $.ajax({
-    method: 'POST',
-    url: 'api/session',
-    data: id
+    method: 'GET',
+    url: `api/users/${id}`,
   })
 );

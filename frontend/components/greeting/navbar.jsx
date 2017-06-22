@@ -18,7 +18,7 @@ const NavBar = ({props}) => {
       <section className="right-nav">
         <i className="fa fa-picture-o fa-lg" aria-hidden="true"></i>
         <i className="fa fa-heart-o fa-lg" aria-hidden="true"></i>
-        <Link to={`/${props.currentUser.id}`}><i className="fa fa-user-o fa-lg" aria-hidden="true"></i></Link>
+        <Link to={`/${props.currentUser.username}`}><i className="fa fa-user-o fa-lg" aria-hidden="true"></i></Link>
         <Link to="/" onClick={props.logout}><i className="fa fa-sign-out fa-lg" aria-hidden="true"></i></Link>
       </section>
     </section>
