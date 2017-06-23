@@ -2,3 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // @import "css_reset.scss";
+
+.edit-button {
+  border: 1px solid #efefef;
+  padding: 3px 25px;
+  height:28px;
+}
+
+.user-profile-header {
+  width:937px;
+  height: 255px;
+  border: 1px solid black;
+}
+
+.user-profile-header li{
+    color: black;
+}
+
+.user-profile-header li {
+  display: inline-block;
+}
+
+.header-username {
+  font-size: 32px;
+    line-height: 40px;
+    font-weight: 200;
+}
+
+.header-name {
+  font-weight:900;
+}
+
+.header-holder {
+  display:flex;
+  justify-content:center;
+}

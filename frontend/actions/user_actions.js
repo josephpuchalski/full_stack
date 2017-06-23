@@ -10,5 +10,8 @@ export const receiveUser = user => {
 };
 
 export const getUser = username => dispatch => (
-  APIUtil.getUser(username).then(user => receiveUser(user))
+  APIUtil.getUser(username).then(
+    user => {
+    return dispatch(receiveUser(user));
+    })
 );
