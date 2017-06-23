@@ -1,4 +1,10 @@
 <script type="text/javascript">
+
+window.images = {
+  default_photo: "<%=image_path('default.jpg')%>"
+}
+
+
   <% if logged_in? %>
   window.currentUser = <%= render(
     "api/users/user.json.jbuilder",

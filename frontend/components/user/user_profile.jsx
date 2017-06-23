@@ -19,7 +19,7 @@ class UserProfile extends React.Component {
       return (
         <div className="header-holder">
           <div className="render-fix user-profile-header">
-            <img src="assets/default.jpg" />
+            <img src={window.images.default_photo} />
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
