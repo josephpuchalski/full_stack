@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_attached_file :profile_image, default_url: "default.jpg"
   validates_attachment_content_type :profile_image, content_type: /\Aimage\/.*\Z/
 
+  has_many :posts
+  
   attr_reader :password
   after_initialize :ensure_session_token!
 

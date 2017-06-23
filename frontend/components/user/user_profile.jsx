@@ -11,6 +11,7 @@ class UserProfile extends React.Component {
   componentDidMount () {
     this.props.getUser(this.props.location.pathname.slice(1));
   }
+  // <img src={window.images.default_photo} />
 
   render () {
     if (isEmpty(this.props.user)) {
@@ -19,7 +20,7 @@ class UserProfile extends React.Component {
       return (
         <div className="header-holder">
           <div className="render-fix user-profile-header">
-            <img src={window.images.default_photo} />
+            <img src={this.props.user.profile_image} />
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
