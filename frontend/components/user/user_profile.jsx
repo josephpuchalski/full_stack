@@ -19,19 +19,22 @@ class UserProfile extends React.Component {
       return (
         <div className="header-holder">
           <div className="render-fix user-profile-header">
+            <img src="assets/default.jpg" />
+            <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
               <li><Link className="edit-button" to="accounts/edit"><button>Edit Button</button></Link></li>
             </ul>
-            <ul>
-              <li>0 posts</li>
-              <li>0 followers</li>
-              <li>0 following</li>
+            <ul className="post-follower-following">
+              <li>0 posts</li>&nbsp;&nbsp;
+              <li>0 followers</li>&nbsp;&nbsp;
+              <li>0 following</li>&nbsp;&nbsp;
             </ul>
             <ul>
               <li><p className="header-name">{this.props.user.name}</p></li>
               <li><p className="header-bio">{this.props.user.bio}</p></li>
             </ul>
+            </section>
           </div>
         </div>
       );

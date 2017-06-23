@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // @import "css_reset.scss";
 
+.render-fix {
+  position:relative;
+  z-index: -1;
+  top: 75px;
+  text-align:center;
+
+}
+
 .edit-button {
   border: 1px solid #efefef;
   padding: 3px 25px;
@@ -12,7 +20,18 @@
 .user-profile-header {
   width:937px;
   height: 255px;
-  border: 1px solid black;
+}
+
+.user-profile-header img {
+  position:absolute;
+  top:50px;
+  left:75px;
+  height: 150px;
+  width: 150px;
+  background: white;
+-moz-border-radius: 75px;
+-webkit-border-radius: 75px;
+border-radius: 75px;
 }
 
 .user-profile-header li{
@@ -35,5 +54,15 @@
 
 .header-holder {
   display:flex;
+  flex-wrap: wrap;
   justify-content:center;
+}
+
+.post-follwer-following li {
+  padding: 0 10px;
+  margin: 10px;
+}
+
+.user-detail-holder {
+  margin-top: 10px
 }

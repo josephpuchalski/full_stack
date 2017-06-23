@@ -227,10 +227,3 @@ font-size:14px;
 input[type="text"], input[type="password"], textarea, select {
     outline: none;
 }
-
-.render-fix {
-  position:relative;
-  z-index: -1;
-  top: 75px;
-  text-align: center;
-}
