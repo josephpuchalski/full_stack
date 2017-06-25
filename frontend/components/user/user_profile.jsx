@@ -9,7 +9,8 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount () {
-    this.props.getUser(this.props.location.pathname.slice(1));
+    debugger;
+    this.props.getUser(this.props.match.url);
   }
   // <img src={window.images.default_photo} />
 
@@ -27,7 +28,7 @@ class UserProfile extends React.Component {
               <li><Link className="edit-button" to="accounts/edit"><button>Edit Button</button></Link></li>
             </ul>
             <ul className="post-follower-following">
-              <li>0 posts</li>&nbsp;&nbsp;
+              <li>{this.props.user.posts.length} posts</li>&nbsp;&nbsp;
               <li>0 followers</li>&nbsp;&nbsp;
               <li>0 following</li>&nbsp;&nbsp;
             </ul>
