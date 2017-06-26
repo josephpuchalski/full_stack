@@ -14,6 +14,7 @@ class PostIndexItem extends React.Component {
   }
 
 
+
   render() {
     return (
           <Link className="post" to={`/posts/${this.props.post.id}`}><img className="user-posts" src={this.props.post.image} /></Link>

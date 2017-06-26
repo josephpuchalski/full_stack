@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 class PostForm extends React.Component {
@@ -7,7 +7,7 @@ class PostForm extends React.Component {
   constructor(props) {
     super(props);
     debugger;
-    this.state = {caption: "", imageFile: null, imageUrl: null, user_id: ""};
+    this.state = {caption: "", imageFile: null, imageUrl: null, user_id: "", redirect: false};
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,17 +23,17 @@ class PostForm extends React.Component {
 
     let fileReader = new FileReader();
     fileReader.onloadend = function () {
-      debugger;
       this.setState({ imageFile: file, imageUrl: fileReader.result });
     }.bind(this);
 
     if (file) {
       fileReader.readAsDataURL(file);
     }
+
   }
 
  handleSubmit (e) {
-   debugger;
+   this.setState({redirect: true});
    const formData = new FormData();
    formData.append("post[caption]", this.state.caption);
    formData.append("post[image]", this.state.imageFile);
@@ -47,7 +47,9 @@ class PostForm extends React.Component {
 
 
  render () {
-
+   if (this.state.redirect) {
+     return <Redirect to={`/${this.props.currentUser.username}`} />;
+   } else {
    return(
      <div className="post-form">
       <h1>Create a New Post</h1>
@@ -63,7 +65,8 @@ class PostForm extends React.Component {
      <img className="image-preview" src={this.state.imageUrl}/>
    </div>);
    }
-}
 
+}
+}
 
 export default PostForm;
