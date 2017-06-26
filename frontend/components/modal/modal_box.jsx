@@ -48,7 +48,7 @@ componentWillMount() {
           isOpen={this.props.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Post"
         >
         <PostShow postId={this.props.postId}/>
         </Modal>

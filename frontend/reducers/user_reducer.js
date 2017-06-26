@@ -10,6 +10,7 @@ const UserReducer = (state = defaultState, action) => {
       const user = action.user;
       return merge({}, state, user);
     case RECEIVE_SINGLE_POST:
+    debugger;
       const newState = merge({}, state);
       if (!newState.posts.includes(action.post)) {
         newState.posts.push(action.post);
