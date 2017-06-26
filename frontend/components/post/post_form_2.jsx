@@ -51,15 +51,18 @@ var PostForm = React.createClass({
   render: function () {
 
     return(
-      <div>
-        Post form!
-
-        <Link to="/">Back to Posts</Link>
-        <input type="text" onChange={this.updateBody}/>
-        <input type="file" onChange={this.updateFile}/>
-        <button onClick={this.handleSubmit}>Make Post!</button>
-        <img src={this.state.imageUrl}/>
-      </div>);
+      <div className="post-form">
+        <h1>Create a New Post</h1>
+        <br />
+        <input placeholder="Caption" type="text" onChange={this.updateBody}/>
+        <br />
+        <input placeholder="Upload Photo" type="file" onChange={this.updateFile}/>
+        <br />
+        <button onClick={this.handleSubmit}>Create Post</button>
+        <br />
+        <img className="image-preview" src={this.state.imageUrl}/>
+      </div>
+    );
   }
 });
 
