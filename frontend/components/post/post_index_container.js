@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import {fetchPosts, createPost, deletePost, editPost} from '../../actions/post_actions';
 import { selectAllPosts, selectAllPostsFromUser } from '../../reducers/selectors';
-
+import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
@@ -19,6 +19,7 @@ const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
   createPost: (post) => dispatch(createPost(post)),
   deletePost: (post) => dispatch(deletePost(post)),
+  openModal: (postId) => dispatch(openModal(postId))
 });
 
 

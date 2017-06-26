@@ -6,6 +6,7 @@ class PostIndexItem extends React.Component {
     super(props);
     this.state = {};
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleDelete(e) {
@@ -13,11 +14,16 @@ class PostIndexItem extends React.Component {
     this.props.deletePost(this.props.post.id);
   }
 
+  handleClick() {
+    this.props.openModal(this.props.post.id);
+  }
 
 
   render() {
     return (
-          <Link className="post" to={`/posts/${this.props.post.id}`}><img className="user-posts" src={this.props.post.image} /></Link>
+      <div onClick={this.handleClick}>
+        <img className="user-posts" src={this.props.post.image} />
+      </div>
     );
   }
 }

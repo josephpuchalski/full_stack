@@ -17,7 +17,7 @@ class PostIndex extends React.Component {
     const postItems = this.props.posts.map(
       post => {
         return (
-          <PostIndexItem key={post.id} post={ post } deletePost={ this.props.deletePost }
+          <PostIndexItem openModal={this.props.openModal} key={post.id} post={ post } deletePost={ this.props.deletePost }
             fetchPosts={this.props.fetchPosts}/>
         );}
       );

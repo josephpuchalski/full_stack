@@ -5,13 +5,13 @@ import { getUser } from '../../actions/user_actions';
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
-    user: state.user
+    user: state.user,
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getUser: username => dispatch(getUser(username))
+    getUser: username => dispatch(getUser(username)),
   };
 };
 

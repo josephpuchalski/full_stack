@@ -3,6 +3,8 @@ import { isEmpty } from 'lodash';
 import { Link, Route } from 'react-router-dom';
 import PostIndexContainer from '../post/post_index_container';
 import PostFormContainer from '../post/post_form_container';
+import ModalContainer from '../modal/modal_container';
+import PostShow from '../post/post_show';
 class UserProfile extends React.Component {
 
   constructor(props) {
@@ -15,7 +17,7 @@ class UserProfile extends React.Component {
   }
 
   componentWillReceiveProps () {
-    
+
   }
   // <img src={window.images.default_photo} />
 
@@ -45,6 +47,7 @@ class UserProfile extends React.Component {
           </div>
           <Route exact path='/:username' component={PostIndexContainer} />
           <Route exact path='/:username/create_post' component={PostFormContainer} />
+          <ModalContainer />
         </div>
       );
     }
@@ -52,4 +55,5 @@ class UserProfile extends React.Component {
 
 }
 
+// <Route exact path="/:username/posts/:id" component={ModalContainer} />
 export default UserProfile;
