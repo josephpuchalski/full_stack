@@ -1,7 +1,7 @@
 export const fetchAllPosts = () => {
   return $.ajax({
     method: 'GET',
-    url: 'api/posts'
+    url: 'api/posts/'
   });
 };
 

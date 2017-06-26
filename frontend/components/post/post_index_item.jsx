@@ -16,15 +16,10 @@ class PostIndexItem extends React.Component {
 
   render() {
     return (
-      <section>
-        <li key={this.props.post.id}>
-        <img className="user-posts" src={this.props.post.image} />
-          <Link className="post" to={`/posts/${this.props.post.id}`}>{this.props.post.caption}</Link>
-          <button onClick={this.handleDelete}>Delete</button>
-        </li>
-      </section>
+          <Link className="post" to={`/posts/${this.props.post.id}`}><img className="user-posts" src={this.props.post.image} /></Link>
     );
   }
 }
 
+// <button onClick={this.handleDelete}>Delete</button>
 export default PostIndexItem;

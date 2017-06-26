@@ -1,7 +1,7 @@
 var React = require("react");
 var Link = require("react-router-dom").Link;
-
-var PostStore = require("../../store/store.js");
+var Redirect = require("react-router-dom").Redirect;
+// var PostStore = require("../../store/store.js");
 var PostApi = require('../../util/post_util.js');
 
 var PostForm = React.createClass({
@@ -41,7 +41,9 @@ var PostForm = React.createClass({
     formData.append("post[caption]", this.state.caption);
     formData.append("post[image]", this.state.imageFile);
     formData.append("post[user_id]", this.props.currentUser.id);
-    PostApi.createPost(formData, this.goBack);
+    PostApi.createPost(formData);
+    return <Redirect to='/' />;
+
   },
 
   goBack: function () {
@@ -49,7 +51,6 @@ var PostForm = React.createClass({
   },
 
   render: function () {
-
     return(
       <div className="post-form">
         <h1>Create a New Post</h1>
@@ -58,7 +59,7 @@ var PostForm = React.createClass({
         <br />
         <input placeholder="Upload Photo" type="file" onChange={this.updateFile}/>
         <br />
-        <button onClick={this.handleSubmit}>Create Post</button>
+        <button className="create-post-button" onClick={this.handleSubmit}>Create Post</button>
         <br />
         <img className="image-preview" src={this.state.imageUrl}/>
       </div>

@@ -5,22 +5,27 @@ import { Link } from 'react-router-dom';
 class PostForm extends React.Component {
 
   constructor(props) {
-    debugger;
     super(props);
-    this.state = {caption: "", imageFile: null, imageUrl: null, user_id: props.currentUser.id};
+    debugger;
+    this.state = {caption: "", imageFile: null, imageUrl: null, user_id: ""};
+    this.updateFile = this.updateFile.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  updateCaption (e) {
-    debugger;
-    this.setState({caption: e.target.value});
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   updateFile (e) {
     let file = e.currentTarget.files[0];
+
     let fileReader = new FileReader();
     fileReader.onloadend = function () {
+      debugger;
       this.setState({ imageFile: file, imageUrl: fileReader.result });
-    };
+    }.bind(this);
 
     if (file) {
       fileReader.readAsDataURL(file);
@@ -28,10 +33,11 @@ class PostForm extends React.Component {
   }
 
  handleSubmit (e) {
+   debugger;
    const formData = new FormData();
    formData.append("post[caption]", this.state.caption);
    formData.append("post[image]", this.state.imageFile);
-   formData.append("post[user_id]", this.state.user_id);
+   formData.append("post[user_id]", this.props.currentUser.id);
    this.props.createPost(formData);
  }
 
@@ -43,19 +49,19 @@ class PostForm extends React.Component {
  render () {
 
    return(
-     <div>
-     Post form!
+     <div className="post-form">
+      <h1>Create a New Post</h1>
       <br />
      <Link to="/:username">Back to Posts</Link>
      <br />
-     <input type="text" onChange={this.updateCaption}/>
-      <br />
-     <input type="file" onChange={this.updateFile}/>
-      <br />
-     <button onClick={this.handleSubmit}>Make Post!</button>
-      <br />
-     <img src={this.state.imageUrl}/>
-     </div>);
+     <input placeholder="Caption" type="text" onChange={this.update('caption')}/>
+     <br />
+     <input placeholder="Upload Photo" type="file" onChange={this.updateFile}/>
+     <br />
+     <button className="create-post-button" onClick={this.handleSubmit}>Create Post</button>
+     <br />
+     <img className="image-preview" src={this.state.imageUrl}/>
+   </div>);
    }
 }
 

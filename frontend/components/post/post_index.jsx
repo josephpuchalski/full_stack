@@ -9,7 +9,7 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts();
+    // this.props.fetchPosts();
   }
 
 
@@ -23,11 +23,8 @@ class PostIndex extends React.Component {
       );
 
     return (
-      <div className="main-container">
-      <h1>Posts me</h1>
-          <ul>
+      <div className="photo-container">
           {postItems}
-          </ul>
       </div>
     );
   }
