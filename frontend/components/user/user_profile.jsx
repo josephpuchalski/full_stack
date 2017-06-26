@@ -32,7 +32,7 @@ class UserProfile extends React.Component {
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
-              <li><Link className="edit-button" to="accounts/edit"><button>Edit Button</button></Link></li>
+              <li><Link className="edit-button" to="accounts/edit"><button>Edit Profile</button></Link></li>
             </ul>
             <ul className="post-follower-following">
               <li>{this.props.user.posts.length} posts</li>&nbsp;&nbsp;
@@ -40,8 +40,8 @@ class UserProfile extends React.Component {
               <li>0 following</li>&nbsp;&nbsp;
             </ul>
             <ul>
-              <li><p className="header-name">{this.props.user.name}</p></li>
-              <li><p className="header-bio">{this.props.user.bio}</p></li>
+              <li className="header-name">{this.props.user.name}</li>
+              <li className="header-bio">{this.props.user.bio}</li>
             </ul>
             </section>
           </div>

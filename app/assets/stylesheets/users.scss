@@ -15,6 +15,9 @@
   border: 1px solid #efefef;
   padding: 3px 25px;
   height:28px;
+  position:relative;
+  right:10px;
+  top:16px;
 }
 
 .user-profile-header {
@@ -43,6 +46,9 @@ border-radius: 75px;
 }
 
 .header-username {
+  position:relative;
+  right:10px;
+  top:20px;
   font-size: 32px;
     line-height: 40px;
     font-weight: 200;
@@ -50,6 +56,15 @@ border-radius: 75px;
 
 .header-name {
   font-weight:900;
+  position:relative;
+  left: 34px;
+  top:10px;
+}
+
+.header-bio {
+  position:relative;
+  left: 45px;
+    top:10px;
 }
 
 .header-holder {
@@ -58,7 +73,7 @@ border-radius: 75px;
   justify-content:center;
 }
 
-.post-follwer-following li {
+.post-follwer-following ul {
   padding: 0 10px;
   margin: 10px;
 }
