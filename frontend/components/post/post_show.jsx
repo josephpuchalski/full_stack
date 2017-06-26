@@ -26,21 +26,32 @@ import { fetchPost} from '../../actions/post_actions';
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount () {
     this.props.fetchPost(this.props.postId);
   }
 
+  handleClick(e) {
+    this.props.deletePost(this.props.postId);
+  }
+
   render () {
     if (this.props.post === undefined) {
       return null;
     } else {
-      return <img src={this.props.post.image} />;
+      return (
+        <div className="modal-image-container">
+        <img src={this.props.post.image} />
+        </div>
+    );
     }
 
   }
 }
+// <button onClick={this.handleClick}>Delete</button>
 
 const mapStateToProps = (state, ownProps) => {
   const postId = ownProps.postId;

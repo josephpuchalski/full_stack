@@ -50,7 +50,7 @@ componentWillMount() {
           style={customStyles}
           contentLabel="Post"
         >
-        <PostShow postId={this.props.postId}/>
+        <PostShow deletePost={this.props.deletePost} postId={this.props.postId}/>
         </Modal>
     );
   }
