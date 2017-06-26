@@ -12,11 +12,11 @@ const App = () => (
       <GreetingContainer />
       <Route path='/:username' component={UserProfileContainer} />
 
-      <Route exact path='/:username' component={PostIndexContainer} />
-      <Route exact path='/:username/create_post' component={PostFormContainer} />
   </div>
 );
 
+// <Route exact path='/:username/create_post' component={PostFormContainer} />
+// <Route exact path='/:username' component={PostIndexContainer} />
 // <AuthRoute exact path="/login" component={SessionFormContainer} />
 // <AuthRoute path="/signup" component={SessionFormContainer} />
 export default App;

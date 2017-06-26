@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class PostForm extends React.Component {
@@ -32,23 +32,23 @@ class PostForm extends React.Component {
   }
 
  handleSubmit (e) {
-   this.setState({redirect: true});
+  //  this.setState({redirect: true});
    const formData = new FormData();
    formData.append("post[caption]", this.state.caption);
    formData.append("post[image]", this.state.imageFile);
    formData.append("post[user_id]", this.props.currentUser.id);
-   this.props.createPost(formData);
+   this.props.createPost(formData).then(() => {this.props.history.push(`/${this.props.currentUser.username}`);});
  }
 
  goBack () {
    this.context.router.push("/");
  }
 
+ //  if (this.state.redirect) {
+ //    return <Redirect to={`/${this.props.currentUser.username}`} />;
+ //  } else {
 
  render () {
-   if (this.state.redirect) {
-     return <Redirect to={`/${this.props.currentUser.username}`} />;
-   } else {
    return(
      <div className="post-form">
       <h1>Create a New Post</h1>
@@ -66,6 +66,6 @@ class PostForm extends React.Component {
    }
 
 }
-}
 
-export default PostForm;
+
+export default withRouter(PostForm);

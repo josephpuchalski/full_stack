@@ -1,6 +1,8 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import PostIndexContainer from '../post/post_index_container';
+import PostFormContainer from '../post/post_form_container';
 class UserProfile extends React.Component {
 
   constructor(props) {
@@ -37,6 +39,8 @@ class UserProfile extends React.Component {
             </ul>
             </section>
           </div>
+          <Route exact path='/:username' component={PostIndexContainer} />
+          <Route exact path='/:username/create_post' component={PostFormContainer} />
         </div>
       );
     }
