@@ -10,6 +10,7 @@ class UserProfile extends React.Component {
   constructor(props) {
     super(props);
 
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount () {
@@ -22,13 +23,20 @@ class UserProfile extends React.Component {
     }
   }
   // <img src={window.images.default_photo} />
+  handleFollow() {
+
+  }
 
   toggleButton() {
     if (this.props.currentUser.id === this.props.user.id) {
       return <li><button className="edit-button">Edit Profile</button></li>;
     } else {
-      return <li><button className="edit-button">Follow</button></li>;
+      return <li><button onClick={this.handleFollow}className="edit-button">Follow</button></li>;
     }
+  }
+
+  handleUpload() {
+
   }
 
   render () {
@@ -38,7 +46,7 @@ class UserProfile extends React.Component {
       return (
         <div className="header-holder">
           <div className="render-fix user-profile-header">
-            <img src={this.props.user.profile_image} />
+            <img onClick={this.handleUpload} src={this.props.user.profile_image} />
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>

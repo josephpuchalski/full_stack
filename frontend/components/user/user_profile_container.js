@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getUser: username => dispatch(getUser(username)),
+    follow: id => dispatch(follow(id)),
   };
 };
 

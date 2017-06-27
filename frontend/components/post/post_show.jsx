@@ -3,30 +3,10 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { fetchPost} from '../../actions/post_actions';
 
-// const PostShow = (post) => {
-//   if (post.post === undefined) {
-//     const getPost = post.fetchPost(post.postId);
-//     return (
-//       <section>
-//         <h1>{getPost.title}</h1>
-//         <h3>{getPost.body}</h3>
-//       </section>
-//     );
-//   } else {
-//     return (
-//       <section>
-//         <h1>{post.post.title}</h1>
-//         <h3>{post.post.body}</h3>
-//       </section>
-//
-// );}
-// };
-
 
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -44,14 +24,20 @@ class PostShow extends React.Component {
     } else {
       return (
         <div className="modal-image-container">
-        <img src={this.props.post.image} />
+          <div className='modal-left'>
+            <img src={this.props.post.image} />
+          </div>
+          <div className="modal-right">
+            <p>{this.props.user.username}</p>
+            <p>{this.props.post.caption}</p>
+            <button onClick={this.handleClick}>Delete</button>
+          </div>
         </div>
     );
     }
 
   }
 }
-// <button onClick={this.handleClick}>Delete</button>
 
 const mapStateToProps = (state, ownProps) => {
   const postId = ownProps.postId;

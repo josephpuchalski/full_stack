@@ -48,8 +48,10 @@
 .modal-image-container {
   width: 937px;
   height: 500px;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.modal-image-container img {
-  width: 50%;
-}
+// .modal-image-container img {
+//   max-width: 50%;
+// }
