@@ -7,7 +7,17 @@ class User < ApplicationRecord
   validates_attachment_content_type :profile_image, content_type: /\Aimage\/.*\Z/
 
   has_many :posts
-  
+
+  has_many :followings,
+  class_name: :Follow,
+  primary_key: :id,
+  foreign_key: :follower_id
+
+  has_many :followers,
+  class_name: :Follow,
+  primary_key: :id,
+  foreign_key: :following_id
+
   attr_reader :password
   after_initialize :ensure_session_token!
 

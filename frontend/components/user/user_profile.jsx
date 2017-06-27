@@ -32,12 +32,12 @@ class UserProfile extends React.Component {
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
-              <li><Link className="edit-button" to="accounts/edit"><button>Edit Profile</button></Link></li>
+              <li><button className="edit-button">Follow</button></li>
             </ul>
             <ul className="post-follower-following">
               <li>{this.props.user.posts.length} posts</li>&nbsp;&nbsp;
-              <li>0 followers</li>&nbsp;&nbsp;
-              <li>0 following</li>&nbsp;&nbsp;
+              <li>{this.props.user.followers.length} followers</li>&nbsp;&nbsp;
+              <li>{this.props.user.followings.length} following</li>&nbsp;&nbsp;
             </ul>
             <ul>
               <li className="header-name">{this.props.user.name}</li>
@@ -55,5 +55,6 @@ class UserProfile extends React.Component {
 
 }
 
+// <li><button className="edit-button">Edit Profile</button></li>
 // <Route exact path="/:username/posts/:id" component={ModalContainer} />
 export default UserProfile;
