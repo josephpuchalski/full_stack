@@ -10,7 +10,7 @@ const UserReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       const user = action.user;
-      return merge({}, state, user);
+      return user;
     case RECEIVE_SINGLE_POST:
       const newState = merge({}, state);
       let toPush = true;

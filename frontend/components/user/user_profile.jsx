@@ -40,6 +40,7 @@ class UserProfile extends React.Component {
   }
 
   render () {
+
     if (isEmpty(this.props.user)) {
       return null;
     } else {
