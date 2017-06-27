@@ -16,8 +16,10 @@ class UserProfile extends React.Component {
     this.props.getUser(this.props.match.url);
   }
 
-  componentWillReceiveProps () {
-
+  componentWillReceiveProps (nextProps) {
+    if (this.props.match.url !== nextProps.match.url) {
+      this.props.getUser(nextProps.match.url);
+    }
   }
   // <img src={window.images.default_photo} />
 
