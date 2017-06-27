@@ -31,33 +31,22 @@ class PostShow extends React.Component {
             <div className="post-header">
               <img src={this.props.user.profile_image} />
               <p>{this.props.user.username}</p>
-              <button onClick={this.handleClick}>Delete</button>
+              <i onClick={this.handleClick} className="fa fa-trash-o" aria-hidden="true"></i>
             </div>
             <div className="post-information">
-            {this.props.post.caption}
-            <p>
-            dfadfdsaf
-            dsafsadfasd
-            fsadfasdf
-            sdafsadfdsa
-            fadsf
-            asdf
-            asdfads
-            f
-            a
-            ds
-            f
-            ads
-            f
-            </p>
+              <p>{this.props.post.caption}</p>
             </div>
+            <div className='post-footer'>
             <div className="modal-icons">
               <i className="fa fa-heart-o fa-lg" aria-hidden="true"></i>
-              <i className="fa fa-commenting-o fa-lg" aria-hidden="true"></i>
+              <label htmlFor="comment"><i className="fa fa-commenting-o fa-lg" aria-label="true"></i></label>
+              <p>0 Likes</p>
+              <p>{new Date(this.props.post.created_at).toDateString()}</p>
+              <form>
+              <textarea id="comment" placeholder="Add Comment"></textarea>
+              </form>
             </div>
-            <form>
-            <textarea placeholder="Add Comment"></textarea>
-            </form>
+          </div>
           </div>
         </div>
     );

@@ -55,7 +55,7 @@ class PostForm extends React.Component {
       <br />
      <Link to="/:username">Back to Posts</Link>
      <br />
-     <input placeholder="Caption" type="text" onChange={this.update('caption')}/>
+     <textarea placeholder="Caption" onChange={this.update('caption')}></textarea>
      <br />
      <input placeholder="Upload Photo" type="file" onChange={this.updateFile}/>
      <br />
