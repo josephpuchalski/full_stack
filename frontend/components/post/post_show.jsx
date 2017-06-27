@@ -7,6 +7,7 @@ import { fetchPost} from '../../actions/post_actions';
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
+    debugger;
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -15,6 +16,7 @@ class PostShow extends React.Component {
   }
 
   handleClick(e) {
+    this.props.closeModal();
     this.props.deletePost(this.props.postId);
   }
 
