@@ -23,6 +23,14 @@ class UserProfile extends React.Component {
   }
   // <img src={window.images.default_photo} />
 
+  toggleButton() {
+    if (this.props.currentUser.id === this.props.user.id) {
+      return <li><button className="edit-button">Edit Profile</button></li>;
+    } else {
+      return <li><button className="edit-button">Follow</button></li>;
+    }
+  }
+
   render () {
     if (isEmpty(this.props.user)) {
       return null;
@@ -34,7 +42,7 @@ class UserProfile extends React.Component {
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
-              <li><button className="edit-button">Follow</button></li>
+              {this.toggleButton()}
             </ul>
             <ul className="post-follower-following">
               <li>{this.props.user.posts.length} posts</li>&nbsp;&nbsp;

@@ -21,7 +21,7 @@ class PostIndexItem extends React.Component {
 
   render() {
     return (
-      <div onClick={this.handleClick}>
+      <div className="post-image-sizer" onClick={this.handleClick}>
         <img className="user-posts" src={this.props.post.image} />
       </div>
     );
