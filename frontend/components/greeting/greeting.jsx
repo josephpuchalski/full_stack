@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import {AuthRoute} from '../../util/route_util';
 import SessionFormContainer from '../session/session_form_container';
 import NavBar from './navbar';
-
+import FeedContainer from '../feed/feed_container';
 class Greeting extends React.Component {
 
   constructor(props) {
@@ -13,7 +13,10 @@ class Greeting extends React.Component {
   render () {
     if (this.props.currentUser) {
       return (
+        <div>
           <NavBar props={this.props}/>
+          <Route exact path='/' component={FeedContainer} />
+        </div>
         );
     } else {
       return (

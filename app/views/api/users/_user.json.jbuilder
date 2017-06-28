@@ -27,4 +27,7 @@ json.followings do
       json.profile_image asset_path(following.following.profile_image.url)
     end
   end
+
+  json.followingIds user.user_followings.map { |user| user.id }
+
 end

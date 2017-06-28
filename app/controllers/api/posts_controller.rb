@@ -1,7 +1,19 @@
 class Api::PostsController < ApplicationController
 
+
   def index
-    @posts = Post.all
+    @posts = []
+    current_user.followings.each do |following|
+      following.following.posts.each do |post|
+      @posts << post
+      end
+    end
+
+    # current_user.posts.each do |post|
+    #   @posts << post
+    # end
+
+    @posts
     render 'api/posts/index'
   end
 

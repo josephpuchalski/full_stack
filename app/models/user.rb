@@ -18,6 +18,14 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :following_id
 
+  has_many :user_followings,
+  through: :followings,
+  source: :following
+
+  has_many :user_followers,
+  through: :followings,
+  source: :follower
+
   attr_reader :password
   after_initialize :ensure_session_token!
 
