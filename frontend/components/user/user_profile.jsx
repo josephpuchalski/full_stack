@@ -1,9 +1,10 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import PostIndexContainer from '../post/post_index_container';
 import PostFormContainer from '../post/post_form_container';
 import ModalContainer from '../modal/modal_container';
+import FeedContainer from '../feed/feed_container';
 import PostShow from '../post/post_show';
 import { values } from 'lodash';
 
@@ -88,8 +89,11 @@ class UserProfile extends React.Component {
             </ul>
             </section>
           </div>
+          <Switch>
+          <Route exact path='/' component={FeedContainer} />
           <Route exact path='/:username' component={PostIndexContainer} />
           <Route exact path='/:username/create_post' component={PostFormContainer} />
+          </Switch>
           <ModalContainer />
         </section>
       );

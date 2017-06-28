@@ -15,7 +15,6 @@ class Greeting extends React.Component {
       return (
         <div>
           <NavBar props={this.props}/>
-          <Route exact path='/' component={FeedContainer} />
         </div>
         );
     } else {
@@ -30,6 +29,7 @@ class Greeting extends React.Component {
   }
 }
 
+// <Route exact path='/' component={FeedContainer} />
 // <h1>Hello, {this.props.currentUser.username}</h1>
 // <button onClick={this.props.logout}>Log out</button>
 // <i className="fa fa-picture-o fa-lg" aria-hidden="true"></i>

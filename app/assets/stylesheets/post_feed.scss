@@ -1,8 +1,13 @@
 .feed-post-item img {
+  padding: 20px 0;
   width:600px;
 }
 
 .post-feed-container {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 937px;
   display:flex;
   justify-content:center;
+  flex-wrap: wrap;
 }
