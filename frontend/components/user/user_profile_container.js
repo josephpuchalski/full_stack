@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 import { getUser } from '../../actions/user_actions';
+import { follow, unfollow} from '../../actions/follow_actions';
 
 const mapStateToProps = (state) => {
   return ({

@@ -13,25 +13,25 @@ const UserReducer = (state = defaultState, action) => {
       return user;
     case RECEIVE_SINGLE_POST:
       const newState = merge({}, state);
-      let toPush = true;
+      let toUnshift = true;
       newState.posts.forEach(post => {
         if (post.id === action.post.id) {
-          toPush = false;
+          toUnshift = false;
         }
       });
-      if (toPush) {
-        newState.posts.push(action.post);
+      if (toUnshift) {
+        newState.posts.unshift(action.post);
       }
       return newState;
-    case FOLLOW_USER:
-      updatedState = merge({}, state);
-      return updatedState.followers.push({follower_id: action.follower_id});
     default:
     return state;
   }
 };
 
 
+// case FOLLOW_USER:
+//   updatedState = merge({}, state);
+//   return updatedState.followers.push({follower_id: action.follower_id});
 
 // case UNFOLLOW_USER:
 // updatedState = merge({}, state);

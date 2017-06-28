@@ -33,10 +33,10 @@ class PostForm extends React.Component {
 
  handleSubmit (e) {
   //  this.setState({redirect: true});
+  //  formData.append("post[user_id]", this.props.currentUser.id);
    const formData = new FormData();
    formData.append("post[caption]", this.state.caption);
    formData.append("post[image]", this.state.imageFile);
-   formData.append("post[user_id]", this.props.currentUser.id);
    this.props.createPost(formData).then(() => {this.props.history.push(`/${this.props.currentUser.username}`);});
  }
 
