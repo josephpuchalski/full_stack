@@ -89,11 +89,8 @@ class UserProfile extends React.Component {
             </ul>
             </section>
           </div>
-          <Switch>
-          <Route exact path='/' component={FeedContainer} />
           <Route exact path='/:username' component={PostIndexContainer} />
           <Route exact path='/:username/create_post' component={PostFormContainer} />
-          </Switch>
           <ModalContainer />
         </section>
       );
@@ -102,6 +99,7 @@ class UserProfile extends React.Component {
 
 }
 
+// <Route exact path='/' component={FeedContainer} />
 // <img src={window.images.default_photo} />
 // <li><button className="edit-button">Edit Profile</button></li>
 // <Route exact path="/:username/posts/:id" component={ModalContainer} />
