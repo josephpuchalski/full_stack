@@ -5,11 +5,13 @@ import PostIndexContainer from '../post/post_index_container';
 import PostFormContainer from '../post/post_form_container';
 import ModalContainer from '../modal/modal_container';
 import PostShow from '../post/post_show';
+import { values } from 'lodash';
+
 class UserProfile extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.deleteId = null;
     this.handleFollow = this.handleFollow.bind(this);
     this.toggleButton = this.toggleButton.bind(this);
   }
@@ -30,14 +32,25 @@ class UserProfile extends React.Component {
   }
 
   handleUnfollow() {
-
+    this.props.unfollow();
   }
 
   toggleButton() {
 
+    const isAlreadyFollowing = values(this.props.user.followers).forEach((follower) => {
+
+      if (follower.username === this.props.currentUser.username) {
+        this.deleteId = follower.id;
+        return true;
+      }
+    });
+
     if (this.props.currentUser.id === this.props.user.id) {
       return <li><button className="edit-button">Edit Profile</button></li>;
-    } else {
+    } else if (isAlreadyFollowing) {
+     return <li><button onClick={this.handleUnfollow} className="edit-button">Unfollow</button></li>;
+    }
+    else {
       return (
         <li><button onClick={this.handleFollow} className="edit-button">Follow</button></li>
       );
