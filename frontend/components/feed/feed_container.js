@@ -6,10 +6,11 @@ const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
     user: state.user,
-    posts: state.session.currentUser.posts
+    feedPosts: state.posts
   });
 };
 
+// posts: state.session.currentUser.posts
 
 const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),

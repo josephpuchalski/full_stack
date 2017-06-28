@@ -1,4 +1,6 @@
 import React from 'react';
+import { values } from 'lodash';
+import FeedItem from './feed_item';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -8,16 +10,21 @@ class Feed extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts();
-    forceUpdate()
   }
 
 
   render() {
-    debugger;
+    const postFeed = values(this.props.feedPosts).map(
+      post => {
+        return (
+          <FeedItem key={post.id} post={post} />
+        );
+      }
+    );
 
     return (
-      <div className='render-fix'>
-      <h1>hello</h1>
+      <div className='render-fix post-feed-container'>
+      {postFeed}
       </div>
   );}
 }
