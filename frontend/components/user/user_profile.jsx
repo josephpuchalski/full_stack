@@ -25,7 +25,12 @@ class UserProfile extends React.Component {
   }
 
   handleFollow() {
-    console.log("hi");
+
+    this.props.follow({follow: { following_id: this.props.user.id }});
+  }
+
+  handleUnfollow() {
+
   }
 
   toggleButton() {
@@ -34,7 +39,7 @@ class UserProfile extends React.Component {
       return <li><button className="edit-button">Edit Profile</button></li>;
     } else {
       return (
-        <li><button onClick={() => console.log("hi")} className="edit-button">Follow</button></li>
+        <li><button onClick={this.handleFollow} className="edit-button">Follow</button></li>
       );
     }
   }
@@ -55,7 +60,7 @@ class UserProfile extends React.Component {
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
-              <li><button onClick={() => console.log("hi")} className="edit-button">Follow</button></li>
+              {this.toggleButton()}
             </ul>
             <ul className="post-follower-following">
               <li>{this.props.user.posts.length} posts</li>&nbsp;&nbsp;
