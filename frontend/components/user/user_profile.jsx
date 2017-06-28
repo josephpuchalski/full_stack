@@ -11,27 +11,31 @@ class UserProfile extends React.Component {
     super(props);
 
     this.handleFollow = this.handleFollow.bind(this);
+    this.toggleButton = this.toggleButton.bind(this);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.getUser(this.props.match.url);
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (this.props.match.url !== nextProps.match.url) {
       this.props.getUser(nextProps.match.url);
     }
   }
-  // <img src={window.images.default_photo} />
-  handleFollow() {
 
+  handleFollow() {
+    console.log("hi");
   }
 
   toggleButton() {
+
     if (this.props.currentUser.id === this.props.user.id) {
       return <li><button className="edit-button">Edit Profile</button></li>;
     } else {
-      return <li><button onClick={this.handleFollow}className="edit-button">Follow</button></li>;
+      return (
+        <li><button onClick={() => console.log("hi")} className="edit-button">Follow</button></li>
+      );
     }
   }
 
@@ -39,24 +43,24 @@ class UserProfile extends React.Component {
 
   }
 
-  render () {
-
+  // {this.toggleButton()}
+  render() {
     if (isEmpty(this.props.user)) {
       return null;
     } else {
       return (
-        <div className="header-holder">
+        <section className="header-holder">
           <div className="render-fix user-profile-header">
-            <img onClick={this.handleUpload} src={this.props.user.profile_image} />
+            <img onClick={() => console.log("hi")} src={this.props.user.profile_image} />
             <section className="user-detail-holder">
             <ul>
               <li><p className="header-username">{this.props.user.username}</p></li>
-              {this.toggleButton()}
+              <li><button onClick={() => console.log("hi")} className="edit-button">Follow</button></li>
             </ul>
             <ul className="post-follower-following">
               <li>{this.props.user.posts.length} posts</li>&nbsp;&nbsp;
-              <li>{this.props.user.followers.length} followers</li>&nbsp;&nbsp;
-              <li>{this.props.user.followings.length} following</li>&nbsp;&nbsp;
+              <li>{this.props.user.followerCount} followers</li>&nbsp;&nbsp;
+              <li>{this.props.user.followingCount} following</li>&nbsp;&nbsp;
             </ul>
             <ul>
               <li className="header-name">{this.props.user.name}</li>
@@ -67,13 +71,14 @@ class UserProfile extends React.Component {
           <Route exact path='/:username' component={PostIndexContainer} />
           <Route exact path='/:username/create_post' component={PostFormContainer} />
           <ModalContainer />
-        </div>
+        </section>
       );
     }
   }
 
 }
 
+// <img src={window.images.default_photo} />
 // <li><button className="edit-button">Edit Profile</button></li>
 // <Route exact path="/:username/posts/:id" component={ModalContainer} />
 export default UserProfile;

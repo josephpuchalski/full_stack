@@ -4,8 +4,9 @@ json.name user.name
 json.bio user.bio
 json.profile_image image_path(user.profile_image.url)
 json.posts user.posts.reverse, :id, :caption, :image
-# json.followers user.followers, :follower_id
-# json.followings user.followings, :following_id
+
+json.followerCount user.followers.length
+json.followingCount user.followings.length
 
 
 json.followers do

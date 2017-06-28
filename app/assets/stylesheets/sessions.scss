@@ -45,7 +45,8 @@ body {
   border-bottom: 1px solid #dbdbdb;
   background-color:white;
   display: flex;
-  justify-content: space-between;;
+  justify-content: space-between;
+  z-index: 5;
 }
 
 .left-nav, .middle-nav, .right-nav {
