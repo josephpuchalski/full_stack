@@ -40,3 +40,19 @@
   bottom: 10px;
   left: 10px;
 }
+
+.feed-post-detail {
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+  flex-direction:column;
+  font-size: 14px;
+  margin: 15px 0;
+}
+.feed-post-detail form, textarea{
+  width: 600px;
+}
+
+.feed-post-detail i {
+  margin-right: 10px;
+}
