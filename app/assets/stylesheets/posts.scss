@@ -46,10 +46,17 @@ height: 293px;
 }
 
 .modal-left > img {
-  max-width: 400px;
+  object-fit:contain;
+  min-width: 400px;
+  max-height:600px;
 }
 
 .modal-left {
+  display: flex;
+  align-items:center;
+  min-height:400px;
+  background-color:white;
+  object-fit:contain;
   max-width:60%;
 }
 
