@@ -5,7 +5,8 @@ class Api::LikesController < ApplicationController
     @like.user_id = current_user.id
 
     if @like.save
-      render 'api/likes/show'
+      @post = @like.post
+      render 'api/posts/show'
     else
       render json: @like.errors.full_messages, status: 422
     end
@@ -15,7 +16,8 @@ class Api::LikesController < ApplicationController
     # @like = current_user.likes.find_by(id: params[:id])
     @like = current_user.likes.find_by(post_id: params[:id])
     if @like.destroy
-      render 'api/likes/show'
+      @post = @like.post
+      render 'api/posts/show'
     else
       render json: @like.errors.full_messages, status: 422
     end

@@ -23,6 +23,18 @@ const UserReducer = (state = defaultState, action) => {
         newState.posts.unshift(action.post);
       }
       return newState;
+    case RECEIVE_SINGLE_POST:
+      updatedState = merge({}, state, {posts: state.posts.map(
+        (post) => {
+          // debugger;
+          if (post.id === action.post.id) {
+            return action.post;
+          } else
+            return post;
+        }
+      )});
+
+      return updatedState;
     default:
     return state;
   }

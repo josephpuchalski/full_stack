@@ -6,7 +6,6 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
-
     return ({
     posts: selectAllPostsFromUser(state.user.posts),
     currentUser: state.session.currentUser,
