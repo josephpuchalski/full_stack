@@ -28,6 +28,10 @@ class User < ApplicationRecord
   through: :followings,
   source: :follower
 
+  has_many :post_likes,
+  through: :likes,
+  source: :post
+
   attr_reader :password
   after_initialize :ensure_session_token!
 

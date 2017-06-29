@@ -28,6 +28,17 @@ json.followings do
     end
   end
 
+  json.likes do
+    user.likes.each do |like|
+      json.set! like.id do
+        json.id like.id
+        json.post_id like.post_id
+        json.username like.user.username
+      end
+    end
+  end
+
+  json.likesIds user.post_likes.map { |user| user.id }
   json.followingIds user.user_followings.map { |user| user.id }
 
 end
