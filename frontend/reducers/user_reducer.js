@@ -1,6 +1,6 @@
 import { RECEIVE_USER } from '../actions/user_actions';
 import {merge} from 'lodash';
-import { RECEIVE_SINGLE_POST, REMOVE_SINGLE_POST } from '../actions/post_actions';
+import { RECEIVE_SINGLE_POST, REMOVE_SINGLE_POST, RECEIVE_UPLOAD_POST } from '../actions/post_actions';
 import { FOLLOW_USER, UNFOLLOW_USER } from '../actions/follow_actions';
 const defaultState = Object.freeze({});
 
@@ -11,7 +11,7 @@ const UserReducer = (state = defaultState, action) => {
     case RECEIVE_USER:
       const user = action.user;
       return user;
-    case RECEIVE_SINGLE_POST:
+    case RECEIVE_UPLOAD_POST:
       const newState = merge({}, state);
       let toUnshift = true;
       newState.posts.forEach(post => {

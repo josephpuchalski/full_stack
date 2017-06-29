@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { fetchPost} from '../../actions/post_actions';
 import { getUser } from '../../actions/user_actions';
-
+import { like, unlike } from '../../actions/like_actions';
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -18,17 +18,12 @@ class PostShow extends React.Component {
     this.props.fetchPost(this.props.postId);
   }
 
-  handleClick(e) {
-    this.props.closeModal();
-    this.props.deletePost(this.props.postId).then( () => this.props.getUser(this.props.user.username));
-  }
-
   handleLike() {
-    console.log("like");
+    this.props.like({like: { post_id: this.props.postId }});
   }
 
   handleUnlike() {
-    console.log("unlike");
+    this.props.unlike(this.props.postId);
   }
 
   toggleLike() {
@@ -43,6 +38,11 @@ class PostShow extends React.Component {
         <i onClick={this.handleLike} className="fa fa-heart-o fa-lg" aria-hidden="true"></i>
       );
     }
+  }
+
+  handleClick(e) {
+    this.props.closeModal();
+    this.props.deletePost(this.props.postId).then( () => this.props.getUser(this.props.user.username));
   }
 
   render () {
@@ -67,7 +67,7 @@ class PostShow extends React.Component {
             <div className="modal-icons">
               {this.toggleLike()}
               <label htmlFor="comment"><i className="fa fa-commenting-o fa-lg" aria-label="true"></i></label>
-              <p>0 Likes</p>
+              <p>{this.props.post.likesCount} Likes</p>
               <p>{new Date(this.props.post.created_at).toDateString()}</p>
               <form>
               <textarea id="comment" placeholder="Add Comment"></textarea>
@@ -94,8 +94,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   fetchPost: (postId) => dispatch(fetchPost(postId)),
   getUser: username => dispatch(getUser(username)),
-  likePost: (id) => dispatch(likePost(id)),
-  unlikePost: (id) => dispatch(unlikePost(id))
+  like: (id) => dispatch(like(id)),
+  unlike: (id) => dispatch(unlike(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostShow);

@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_ALL_POSTS, RECEIVE_SINGLE_POST, REMOVE_SINGLE_POST } from '../actions/post_actions';
+import { RECEIVE_ALL_POSTS, RECEIVE_SINGLE_POST, REMOVE_SINGLE_POST, RECEIVE_UPLOAD_POST } from '../actions/post_actions';
 
 const postReducer = (state = {}, action) => {
   // debugger;
@@ -8,6 +8,8 @@ const postReducer = (state = {}, action) => {
     case RECEIVE_ALL_POSTS:
       return Object.assign({}, state, action.posts);
     case RECEIVE_SINGLE_POST:
+      return Object.assign({}, state, {[action.post.id]: action.post});
+    case RECEIVE_UPLOAD_POST:
       return Object.assign({}, state, {[action.post.id]: action.post});
     case REMOVE_SINGLE_POST:
       const currentState = Object.assign({}, state);

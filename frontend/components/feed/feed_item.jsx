@@ -22,7 +22,7 @@ class FeedItem extends React.Component {
               <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
               <label htmlFor="comment"><i className="fa fa-commenting-o fa-2x" aria-label="true"></i></label>
               </div>
-              <span>0 Likes</span>
+              <span>{this.props.post.likesCount} Likes</span>
               <span>{new Date(this.props.post.created_at).toDateString()}</span>
               <form>
               <textarea id="comment" placeholder="Add Comment"></textarea>

@@ -1,8 +1,15 @@
 export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_SINGLE_POST = "RECEIVE_SINGLE_POST";
 export const REMOVE_SINGLE_POST = "REMOVE_SINGLE_POST";
+export const RECEIVE_UPLOAD_POST = "RECEIVE_UPLOAD_POST";
 import * as APIUtil from '../util/post_util';
 
+export const receiveUploadPost = (post) => {
+  return ({
+    type: RECEIVE_UPLOAD_POST,
+    post,
+  });
+};
 
 export const receiveAllPosts = (posts) => {
   return ({
@@ -59,7 +66,7 @@ export const createPost = (post) => {
     return APIUtil.createPost(post)
       .then(
         (post1) => {
-          return dispatch(receiveSinglePost(post1));
+          return dispatch(receiveUploadPost(post1));
         },
         (error) => {
           console.log(error);
