@@ -11,7 +11,6 @@ class FeedItem extends React.Component {
 
 
   render() {
-    debugger;
         return (
           <div className="feed-post-item">
             <div className='feed-post-header'>

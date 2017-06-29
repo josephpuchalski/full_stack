@@ -1,7 +1,7 @@
 export const FOLLOW_USER = 'FOLLOW_USER';
 export const UNFOLLOW_USER = 'UNFOLLOW_USER';
 import * as APIUtil from '../util/follow_util';
-
+import { receiveCurrentUser } from './session_actions';
 
 export const followUser = (follow) => {
   return ({
@@ -19,16 +19,16 @@ export const unfollowUser = (follow) => {
 
 export const follow = id => dispatch => (
   APIUtil.followUser(id).then(
-    follow => {
-      return dispatch(followUser(follow));
+    user => {
+      return dispatch(receiveCurrentUser(user));
     }
   )
 );
 
 export const unfollow = id => dispatch => (
   APIUtil.unfollowUser(id).then(
-    follow => {
-      return dispatch(unfollowUser(follow));
+    user => {
+      return dispatch(receiveCurrentUser(user));
     }
   )
 );

@@ -20,6 +20,7 @@ class UserProfile extends React.Component {
 
   componentDidMount() {
     this.props.getUser(this.props.match.url);
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -38,14 +39,6 @@ class UserProfile extends React.Component {
 
   toggleButton() {
     const isAlreadyFollowing = this.props.currentUser.followings.followingIds.includes(this.props.user.id);
-    // const isAlreadyFollowing = values(this.props.user.followers).forEach((follower) => {
-    //   //DO NOT HAVE ACCESS TO PROPS
-    //   if (follower.username === this.props.currentUser.username) {
-    //     this.deleteId = follower.id;
-    //     return true;
-    //   }
-    // });
-
 
     if (this.props.currentUser.id === this.props.user.id) {
       return <li><button className="edit-button">Edit Profile</button></li>;
@@ -65,7 +58,6 @@ class UserProfile extends React.Component {
 
   // {this.toggleButton()}
   render() {
-
     if (isEmpty(this.props.user)) {
       return null;
     } else {

@@ -9,7 +9,7 @@ import PostFormContainer from './post/post_form_container';
 
 const App = () => (
   <div>
-      <GreetingContainer />
+      <Route path='/' component={GreetingContainer} />
       <Route path='/:username' component={UserProfileContainer} />
 
   </div>

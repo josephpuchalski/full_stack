@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 import {AuthRoute} from '../../util/route_util';
 import SessionFormContainer from '../session/session_form_container';
 import NavBar from './navbar';
