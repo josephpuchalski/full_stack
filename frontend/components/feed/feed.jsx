@@ -14,13 +14,15 @@ class Feed extends React.Component {
 
 
   render() {
-    const postFeed = values(this.props.feedPosts).map(
+    let postFeed = values(this.props.feedPosts).map(
       post => {
         return (
           <FeedItem key={post.id} post={post} />
         );
       }
     );
+
+    postFeed = postFeed.reverse();
 
     return (
       <div className='render-fix post-feed-container'>

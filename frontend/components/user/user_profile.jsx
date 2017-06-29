@@ -30,11 +30,11 @@ class UserProfile extends React.Component {
   }
 
   handleFollow() {
-    this.props.follow({follow: { following_id: this.props.user.id }});
+    this.props.follow({follow: { following_id: this.props.user.id }}).then(() => this.props.getUser(this.props.match.url));
   }
 
   handleUnfollow() {
-    this.props.unfollow(this.props.user.id);
+    this.props.unfollow(this.props.user.id).then(()=> this.props.getUser(this.props.match.url));
   }
 
   toggleButton() {
