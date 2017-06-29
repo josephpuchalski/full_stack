@@ -9,6 +9,9 @@ class PostShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.toggleLike = this.toggleLike.bind(this);
+    this.handleLike = this.handleLike.bind(this);
+    this.handleUnlike = this.handleUnlike.bind(this);
   }
 
   componentDidMount () {
@@ -18,6 +21,28 @@ class PostShow extends React.Component {
   handleClick(e) {
     this.props.closeModal();
     this.props.deletePost(this.props.postId).then( () => this.props.getUser(this.props.user.username));
+  }
+
+  handleLike() {
+    console.log("like");
+  }
+
+  handleUnlike() {
+    console.log("unlike");
+  }
+
+  toggleLike() {
+    const isAlreadyLiked = this.props.currentUser.likes.likesIds.includes(this.props.post.id);
+
+    if (isAlreadyLiked) {
+      return (
+        <i onClick={this.handleUnlike} className="fa fa-heartbeat fa-lg" aria-hidden="true"></i>
+      );
+    } else {
+      return (
+        <i onClick={this.handleLike} className="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+      );
+    }
   }
 
   render () {
@@ -40,7 +65,7 @@ class PostShow extends React.Component {
             </div>
             <div className='post-footer'>
             <div className="modal-icons">
-              <i className="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+              {this.toggleLike()}
               <label htmlFor="comment"><i className="fa fa-commenting-o fa-lg" aria-label="true"></i></label>
               <p>0 Likes</p>
               <p>{new Date(this.props.post.created_at).toDateString()}</p>
@@ -61,13 +86,16 @@ const mapStateToProps = (state, ownProps) => {
   const postId = ownProps.postId;
     return {
       post: state.posts[postId],
-      postId: postId
+      postId: postId,
+      currentUser: state.session.currentUser
     };
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchPost: (postId) => dispatch(fetchPost(postId)),
   getUser: username => dispatch(getUser(username)),
+  likePost: (id) => dispatch(likePost(id)),
+  unlikePost: (id) => dispatch(unlikePost(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostShow);
