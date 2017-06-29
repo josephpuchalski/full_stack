@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .user-posts {
-  width:293px;
-  height: 293px;
+//   width:100%;
+// overflow: hidden
+object-fit: cover;
+width: 293px;
+height: 293px;
+
+}
+
+.post-image-sizer {
+
 }
 
 .image-preview {
