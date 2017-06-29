@@ -95,7 +95,7 @@ const mapDispatchToProps = dispatch => ({
   fetchPost: (postId) => dispatch(fetchPost(postId)),
   getUser: username => dispatch(getUser(username)),
   like: (id) => dispatch(like(id)),
-  unlike: (id) => dispatch(unlike(id))
+  unlike: (id) => dispatch(unlike(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostShow);

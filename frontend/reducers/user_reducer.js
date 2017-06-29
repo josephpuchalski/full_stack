@@ -2,6 +2,7 @@ import { RECEIVE_USER } from '../actions/user_actions';
 import {merge} from 'lodash';
 import { RECEIVE_SINGLE_POST, REMOVE_SINGLE_POST, RECEIVE_UPLOAD_POST } from '../actions/post_actions';
 import { FOLLOW_USER, UNFOLLOW_USER } from '../actions/follow_actions';
+import { LIKE_POST, UNLIKE_POST } from '../actions/like_actions';
 const defaultState = Object.freeze({});
 
 const UserReducer = (state = defaultState, action) => {
@@ -33,7 +34,10 @@ const UserReducer = (state = defaultState, action) => {
             return post;
         }
       )});
-
+      // if (updatedState.likes.likesIds.includes(action.post.id)) {
+      //   let idx = updatedState.likes.likesIds.indexOf(action.post.id);
+      //   delete updatedState.likes.likesIds[idx];
+      // }
       return updatedState;
     default:
     return state;

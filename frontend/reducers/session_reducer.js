@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/session_actions';
 import {merge} from 'lodash';
-
+import { RECEIVE_SINGLE_POST } from '../actions/post_actions';
+import { UNLIKE_POST } from '../actions/like_actions';
 const defaultState = Object.freeze({ currentUser: null, errors: []});
 
 const SessionReducer = ( state = defaultState, action) => {
@@ -16,6 +17,10 @@ const SessionReducer = ( state = defaultState, action) => {
     case CLEAR_ERRORS:
       errors = [];
       return merge({}, defaultState);
+    case RECEIVE_SINGLE_POST:
+      let updatedState = merge({}, state);
+      debugger;
+      return updatedState;
     default:
       return state;
   }
