@@ -28,7 +28,6 @@ class PostShow extends React.Component {
 
   toggleLike() {
     const isAlreadyLiked = this.props.currentUser.likes.likesIds.includes(this.props.post.id);
-
     if (isAlreadyLiked) {
       return (
         <i onClick={this.handleUnlike} className="fa fa-heartbeat fa-lg" aria-hidden="true"></i>

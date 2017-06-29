@@ -5,7 +5,8 @@ class Api::CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      render 'api/comment/show'
+      @post = @comment.post
+      render 'api/posts/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -15,7 +16,8 @@ class Api::CommentsController < ApplicationController
     @comment = current_user.comment.find_by(id: params[:id])
 
     if @comment.destroy
-      render 'api/comment/show'
+      @post = @comment.post
+      render 'api/post/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end

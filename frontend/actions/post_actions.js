@@ -25,6 +25,7 @@ export const receiveSinglePost = (post) => {
   });
 };
 
+
 export const removeSinglePost = (post) => {
   return ({
     type: REMOVE_SINGLE_POST,

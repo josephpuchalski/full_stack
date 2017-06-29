@@ -18,12 +18,16 @@ const SessionReducer = ( state = defaultState, action) => {
       errors = [];
       return merge({}, defaultState);
     case RECEIVE_SINGLE_POST:
-      let updatedState = merge({}, state);
-      debugger;
-      return updatedState;
+    let updatedState = merge({}, state);
+    return updatedState;
     default:
       return state;
   }
 };
+
+// if (updatedState.likes.likesIds.includes(action.post.id)) {
+//   let idx = updatedState.likes.likesIds.indexOf(action.post.id);
+//   delete updatedState.likes.likesIds[idx];
+// }
 
 export default SessionReducer;

@@ -27,23 +27,22 @@ const UserReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_POST:
       updatedState = merge({}, state, {posts: state.posts.map(
         (post) => {
-          // debugger;
           if (post.id === action.post.id) {
             return action.post;
           } else
             return post;
         }
       )});
-      // if (updatedState.likes.likesIds.includes(action.post.id)) {
-      //   let idx = updatedState.likes.likesIds.indexOf(action.post.id);
-      //   delete updatedState.likes.likesIds[idx];
-      // }
       return updatedState;
     default:
     return state;
   }
 };
 
+// if (updatedState.likes.likesIds.includes(action.post.id)) {
+//   let idx = updatedState.likes.likesIds.indexOf(action.post.id);
+//   delete updatedState.likes.likesIds[idx];
+// }
 // case FOLLOW_USER:
 //   updatedState = merge({}, state, {[action.follow.id]: action.follow} );
 //   return updatedState;
