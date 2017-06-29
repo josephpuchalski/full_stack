@@ -1,8 +1,8 @@
-export const addComment = (id) => {
+export const addComment = (comment) => {
   return $.ajax({
     method: 'POST',
     url: 'api/likes/',
-    data: id,
+    data: comment,
   });
 };
 
