@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { fetchPost} from '../../actions/post_actions';
+import { getUser } from '../../actions/user_actions';
 
 
 class PostShow extends React.Component {
@@ -16,7 +17,7 @@ class PostShow extends React.Component {
 
   handleClick(e) {
     this.props.closeModal();
-    this.props.deletePost(this.props.postId);
+    this.props.deletePost(this.props.postId).then( () => this.props.getUser(this.props.user.username));
   }
 
   render () {
@@ -66,6 +67,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchPost: (postId) => dispatch(fetchPost(postId)),
+  getUser: username => dispatch(getUser(username)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostShow);
