@@ -23,18 +23,18 @@ const UserReducer = (state = defaultState, action) => {
         newState.posts.unshift(action.post);
       }
       return newState;
-    case FOLLOW_USER:
-      updatedState = merge({}, state, {[action.follow.id]: action.follow} );
-      return updatedState;
-    case UNFOLLOW_USER:
-      updatedState = merge({}, state);
-      delete updatedState[action.follow.id];
-      return updatedState;
     default:
     return state;
   }
 };
 
+// case FOLLOW_USER:
+//   updatedState = merge({}, state, {[action.follow.id]: action.follow} );
+//   return updatedState;
+// case UNFOLLOW_USER:
+//   updatedState = merge({}, state);
+//   delete updatedState[action.follow.id];
+//   return updatedState;
 
 //   return updatedState.followers.push({follower_id: action.follower_id});
 

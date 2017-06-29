@@ -9,11 +9,11 @@ class Api::PostsController < ApplicationController
       end
     end
 
-    # current_user.posts.each do |post|
-    #   @posts << post
-    # end
+    current_user.posts.each do |post|
+      @posts << post
+    end
 
-    @posts
+    @posts = @posts.sort_by { |post| post.created_at }.reverse
     render 'api/posts/index'
   end
 
