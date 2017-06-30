@@ -1,8 +1,10 @@
 # Travelscape
 
-- Heroku: http://travelscape2.herokuapp.com
+ http://travelscape2.herokuapp.com
 
-##Features & Implementation
+ Travelscape 
+
+## Features & Implementation
 
 ### Posts
 

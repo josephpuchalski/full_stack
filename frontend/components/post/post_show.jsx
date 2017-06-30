@@ -68,11 +68,8 @@ class PostShow extends React.Component {
   }
 
   handleAddComment(e) {
-    console.log(this.state.body);
-    console.log("comment");
-
-    this.setState({body: ""});
-    this.props.comment({comment: {body: this.state.body, post_id: this.props.postId}});
+    this.props.comment({comment: {body: this.state.body, post_id: this.props.postId}}).then(() => this.setState({body: ""}));
+    // this.setState({body: ""});
   }
 
   render () {
@@ -109,7 +106,7 @@ class PostShow extends React.Component {
               <p>{this.props.post.likesCount} Likes</p>
               <p>{new Date(this.props.post.created_at).toDateString()}</p>
               <form onSubmit={this.handleAddComment}>
-              <input type="text" id="comment" placeholder="Add Comment" onChange={this.update('body')} />
+              <input type="text" id="comment" placeholder="Add Comment" value={this.state.body} onChange={this.update('body')} />
               </form>
             </div>
           </div>
