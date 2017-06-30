@@ -27,7 +27,16 @@ class PostShow extends React.Component {
   }
 
   toggleLike() {
-    const isAlreadyLiked = this.props.currentUser.likes.likesIds.includes(this.props.post.id);
+    // const isAlreadyLiked = this.props.currentUser.likes.likesIds.includes(this.props.post.id);
+    // var currentUserId = this.props.currentUser.id;
+    // const isAlreadyLiked = this.props.post.likes.forEach((like) => {
+    //   debugger;
+    //   if (like.user_id === this.props.currentUser.id) {
+    //     return true;
+    //   }
+    // });
+
+    const isAlreadyLiked = this.props.post.likesIds.includes(this.props.currentUser.id);
     if (isAlreadyLiked) {
       return (
         <i onClick={this.handleUnlike} className="fa fa-heartbeat fa-lg" aria-hidden="true"></i>
