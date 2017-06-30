@@ -17,7 +17,7 @@ class Feed extends React.Component {
     let postFeed = values(this.props.feedPosts).map(
       post => {
         return (
-          <FeedItem key={post.id} post={post} />
+          <FeedItem key={post.id} post={post} currentUser={this.props.currentUser}/>
         );
       }
     );

@@ -6,9 +6,21 @@ class FeedItem extends React.Component {
   constructor(props) {
 
     super(props);
+    this.toggleLike = this.toggleLike.bind(this);
   }
 
-
+  toggleLike() {
+    const isAlreadyLiked = this.props.post.likesIds.includes(this.props.currentUser.id);
+    if (isAlreadyLiked) {
+      return (
+        <i className="fa fa-heartbeat fa-2x" aria-hidden="true"></i>
+      );
+    } else {
+      return (
+        <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+      );
+    }
+  }
 
   render() {
     const comments = this.props.post.commentBody.map(
@@ -25,7 +37,7 @@ class FeedItem extends React.Component {
             <img key={this.props.post.id} src={this.props.post.image} />
             <div className='feed-post-detail'>
             <div>
-              <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+            {this.toggleLike()}
               <label htmlFor="comment"><i className="fa fa-commenting-o fa-2x" aria-label="true"></i></label>
               </div>
               <span>{this.props.post.likesCount} Likes</span>
