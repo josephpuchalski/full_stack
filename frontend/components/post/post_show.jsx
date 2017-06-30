@@ -71,7 +71,14 @@ class PostShow extends React.Component {
   }
 
   render () {
+    const comments = this.props.post.commentBody.map(
+      comment => {
+        return (
+          <p key={comment[2]}>{comment[0]}: {comment[1]}</p>
+        );}
+      );
 
+      // <p>{this.props.post.commentBody}</p>
     if (this.props.post === undefined) {
       return null;
     } else {
@@ -88,7 +95,7 @@ class PostShow extends React.Component {
             </div>
             <div className="post-information">
               <p>{this.props.post.caption}</p>
-              <p>{this.props.post.commentBody}</p>
+              {comments}
             </div>
             <div className='post-footer'>
             <div className="modal-icons">

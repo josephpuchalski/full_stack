@@ -11,6 +11,12 @@ class FeedItem extends React.Component {
 
 
   render() {
+    const comments = this.props.post.commentBody.map(
+      comment => {
+        return (
+          <span key={comment[2]}><span className='feed-post-username'>{comment[0]}</span> {comment[1]}</span>
+        );}
+      );
         return (
           <div className="feed-post-item">
             <div className='feed-post-header'>
@@ -23,6 +29,8 @@ class FeedItem extends React.Component {
               <label htmlFor="comment"><i className="fa fa-commenting-o fa-2x" aria-label="true"></i></label>
               </div>
               <span>{this.props.post.likesCount} Likes</span>
+              <span><span className='feed-post-username'>{this.props.post.user}</span> {this.props.post.caption}</span>
+              {comments}
               <span>{new Date(this.props.post.created_at).toDateString()}</span>
               <form>
               <textarea id="comment" placeholder="Add Comment"></textarea>
