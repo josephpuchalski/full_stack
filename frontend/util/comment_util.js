@@ -1,7 +1,7 @@
 export const addComment = (comment) => {
   return $.ajax({
     method: 'POST',
-    url: 'api/likes/',
+    url: 'api/comments/',
     data: comment,
   });
 };
@@ -9,6 +9,6 @@ export const addComment = (comment) => {
 export const removeComment = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/likes/${id}`
+    url: `api/comments/${id}`
   });
 };

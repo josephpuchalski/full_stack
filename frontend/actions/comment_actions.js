@@ -1,6 +1,6 @@
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
-import * as APIUtil from '../util/like_util';
+import * as APIUtil from '../util/comment_util';
 import { receiveSinglePost } from './post_actions';
 
 
@@ -21,8 +21,8 @@ export const removeComment = (comment) => {
 
 
 
-export const comment = comment => dispatch => (
-  APIUtil.addComment(id).then(
+export const comment = comment_detail => dispatch => (
+  APIUtil.addComment(comment_detail).then(
     post => {
       return dispatch(receiveSinglePost(post));
     }

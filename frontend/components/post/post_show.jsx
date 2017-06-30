@@ -4,14 +4,17 @@ import { Link, Redirect } from 'react-router-dom';
 import { fetchPost} from '../../actions/post_actions';
 import { getUser } from '../../actions/user_actions';
 import { like, unlike } from '../../actions/like_actions';
+import { comment, uncomment } from '../../actions/comment_actions';
 
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {body: ""};
     this.handleClick = this.handleClick.bind(this);
     this.toggleLike = this.toggleLike.bind(this);
     this.handleLike = this.handleLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
+    this.handleAddComment = this.handleAddComment.bind(this);
   }
 
   componentDidMount () {
@@ -24,6 +27,12 @@ class PostShow extends React.Component {
 
   handleUnlike() {
     this.props.unlike(this.props.postId);
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   toggleLike() {
@@ -53,7 +62,16 @@ class PostShow extends React.Component {
     this.props.deletePost(this.props.postId).then( () => this.props.getUser(this.props.user.username));
   }
 
+  handleAddComment(e) {
+    console.log(this.state.body);
+    console.log("comment");
+
+    this.setState({body: ""});
+    this.props.comment({comment: {body: this.state.body, post_id: this.props.postId}});
+  }
+
   render () {
+
     if (this.props.post === undefined) {
       return null;
     } else {
@@ -70,6 +88,7 @@ class PostShow extends React.Component {
             </div>
             <div className="post-information">
               <p>{this.props.post.caption}</p>
+              <p>{this.props.post.commentBody}</p>
             </div>
             <div className='post-footer'>
             <div className="modal-icons">
@@ -77,8 +96,8 @@ class PostShow extends React.Component {
               <label htmlFor="comment"><i className="fa fa-commenting-o fa-lg" aria-label="true"></i></label>
               <p>{this.props.post.likesCount} Likes</p>
               <p>{new Date(this.props.post.created_at).toDateString()}</p>
-              <form>
-              <textarea id="comment" placeholder="Add Comment"></textarea>
+              <form onSubmit={this.handleAddComment}>
+              <input type="text" id="comment" placeholder="Add Comment" onChange={this.update('body')} />
               </form>
             </div>
           </div>
@@ -104,6 +123,7 @@ const mapDispatchToProps = dispatch => ({
   getUser: username => dispatch(getUser(username)),
   like: (id) => dispatch(like(id)),
   unlike: (id) => dispatch(unlike(id)),
+  comment: (comment_detail) => dispatch(comment(comment_detail)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostShow);
