@@ -15,6 +15,7 @@ class PostShow extends React.Component {
     this.handleLike = this.handleLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
     this.handleAddComment = this.handleAddComment.bind(this);
+    this.handleRemoveComment = this.handleRemoveComment.bind(this);
   }
 
   componentDidMount () {
@@ -62,6 +63,10 @@ class PostShow extends React.Component {
     this.props.deletePost(this.props.postId).then( () => this.props.getUser(this.props.user.username));
   }
 
+  handleRemoveComment(e) {
+    this.props.uncomment(e.currentTarget.parentElement.className);
+  }
+
   handleAddComment(e) {
     console.log(this.state.body);
     console.log("comment");
@@ -74,7 +79,7 @@ class PostShow extends React.Component {
     const comments = this.props.post.commentBody.map(
       comment => {
         return (
-          <p key={comment[2]}>{comment[0]}: {comment[1]}</p>
+          <p className={comment[2]} key={comment[2]}>{comment[0]}: {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i></p>
         );}
       );
 
@@ -131,6 +136,7 @@ const mapDispatchToProps = dispatch => ({
   like: (id) => dispatch(like(id)),
   unlike: (id) => dispatch(unlike(id)),
   comment: (comment_detail) => dispatch(comment(comment_detail)),
+  uncomment: (id) => dispatch(uncomment(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostShow);

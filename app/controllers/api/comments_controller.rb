@@ -13,11 +13,11 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = current_user.comment.find_by(id: params[:id])
-
+    # @comment = current_user.comment.find_by(id: params[:id])
+    @comment = Comment.find(params[:id])
     if @comment.destroy
       @post = @comment.post
-      render 'api/post/show'
+      render 'api/posts/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end
