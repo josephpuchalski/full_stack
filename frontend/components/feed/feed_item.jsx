@@ -57,7 +57,7 @@ class FeedItem extends React.Component {
     const comments = this.props.post.commentBody.map(
       comment => {
         return (
-          <span key={comment[2]}><span className='feed-post-username'>{comment[0]}</span> {comment[1]}</span>
+          <span className={comment[2]} key={comment[2]}><span className='feed-post-username'>{comment[0]}</span> {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i></span>
         );}
       );
         return (
