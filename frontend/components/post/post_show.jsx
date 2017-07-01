@@ -68,6 +68,7 @@ class PostShow extends React.Component {
   }
 
   handleAddComment(e) {
+    e.preventDefault();
     this.props.comment({comment: {body: this.state.body, post_id: this.props.postId}}).then(() => this.setState({body: ""}));
     // this.setState({body: ""});
   }
