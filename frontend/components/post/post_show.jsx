@@ -74,17 +74,21 @@ class PostShow extends React.Component {
   }
 
   render () {
-    const comments = this.props.post.commentBody.map(
-      comment => {
-        return (
-          <p className={comment[2]} key={comment[2]}>{comment[0]}: {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i></p>
-        );}
-      );
+
+
 
       // <p>{this.props.post.commentBody}</p>
     if (this.props.post === undefined) {
       return null;
     } else {
+
+      const comments = this.props.post.commentBody.map(
+        comment => {
+          return (
+            <p className={comment[2]} key={comment[2]}>{comment[0]}: {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i></p>
+          );}
+        );
+
       return (
         <div className="modal-image-container">
           <div className='modal-left'>
