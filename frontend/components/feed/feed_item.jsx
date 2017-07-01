@@ -3,21 +3,52 @@ import { values } from 'lodash';
 import { Link } from 'react-router-dom';
 
 class FeedItem extends React.Component {
-  constructor(props) {
 
+  constructor(props) {
     super(props);
+    this.state = {body: ""};
+
     this.toggleLike = this.toggleLike.bind(this);
+    this.handleLike = this.handleLike.bind(this);
+    this.handleUnlike = this.handleUnlike.bind(this);
+    this.handleAddComment = this.handleAddComment.bind(this);
+    this.handleRemoveComment = this.handleRemoveComment.bind(this);
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  handleRemoveComment(e) {
+    this.props.uncomment(e.currentTarget.parentElement.className);
+  }
+
+  handleAddComment(e) {
+    e.preventDefault();
+    this.props.comment({comment: {body: this.state.body, post_id: this.props.post.id}}).then(() => this.setState({body: ""}));
+    // this.setState({body: ""});
+  }
+
+
+  handleLike() {
+    this.props.like({like: { post_id: this.props.post.id }});
+  }
+
+  handleUnlike() {
+    this.props.unlike(this.props.post.id);
   }
 
   toggleLike() {
     const isAlreadyLiked = this.props.post.likesIds.includes(this.props.currentUser.id);
     if (isAlreadyLiked) {
       return (
-        <i className="fa fa-heartbeat fa-2x" aria-hidden="true"></i>
+        <i onClick={this.handleUnlike} className="fa fa-heartbeat fa-2x" aria-hidden="true"></i>
       );
     } else {
       return (
-        <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        <i onClick={this.handleLike} className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
       );
     }
   }
@@ -44,8 +75,8 @@ class FeedItem extends React.Component {
               <span><span className='feed-post-username'>{this.props.post.user}</span> {this.props.post.caption}</span>
               {comments}
               <span>{new Date(this.props.post.created_at).toDateString()}</span>
-              <form>
-              <textarea id="comment" placeholder="Add Comment"></textarea>
+              <form onSubmit={this.handleAddComment}>
+                <input type="text" id="comment" placeholder="Add Comment" value={this.state.body} onChange={this.update('body')} />
               </form>
             </div>
           </div>

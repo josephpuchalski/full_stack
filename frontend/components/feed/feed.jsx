@@ -9,6 +9,7 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
+    this.props.getUser(this.props.currentUser.username);
     this.props.fetchPosts();
   }
 
@@ -17,7 +18,7 @@ class Feed extends React.Component {
     let postFeed = values(this.props.feedPosts).map(
       post => {
         return (
-          <FeedItem key={post.id} post={post} currentUser={this.props.currentUser}/>
+          <FeedItem comment={this.props.comment} uncomment={this.props.uncomment} like={ this.props.like } unlike= { this.props.unlike } key={post.id} post={post} currentUser={this.props.currentUser}/>
         );
       }
     );
