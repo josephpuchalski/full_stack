@@ -16,6 +16,7 @@ class PostShow extends React.Component {
     this.handleUnlike = this.handleUnlike.bind(this);
     this.handleAddComment = this.handleAddComment.bind(this);
     this.handleRemoveComment = this.handleRemoveComment.bind(this);
+    this.allowPostDelete = this.allowPostDelete.bind(this);
   }
 
   componentDidMount () {
@@ -37,15 +38,6 @@ class PostShow extends React.Component {
   }
 
   toggleLike() {
-    // const isAlreadyLiked = this.props.currentUser.likes.likesIds.includes(this.props.post.id);
-    // var currentUserId = this.props.currentUser.id;
-    // const isAlreadyLiked = this.props.post.likes.forEach((like) => {
-    //   debugger;
-    //   if (like.user_id === this.props.currentUser.id) {
-    //     return true;
-    //   }
-    // });
-
     const isAlreadyLiked = this.props.post.likesIds.includes(this.props.currentUser.id);
     if (isAlreadyLiked) {
       return (
@@ -73,6 +65,12 @@ class PostShow extends React.Component {
     // this.setState({body: ""});
   }
 
+  allowPostDelete() {
+    if (this.props.currentUser.username === this.props.user.username) {
+      return (  <i onClick={this.handleClick} className="fa fa-trash-o" aria-hidden="true"></i>);
+    }
+  }
+
   render () {
 
 
@@ -84,10 +82,16 @@ class PostShow extends React.Component {
 
       const comments = this.props.post.commentBody.map(
         comment => {
-          return (
-            <p className={comment[2]} key={comment[2]}>{comment[0]}: {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i></p>
-          );}
-        );
+          if (this.props.currentUser.username === comment[0]) {
+            return (
+              <p className={comment[2]} key={comment[2]}>{comment[0]}: {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i></p>
+            );
+          } else {
+            return (
+              <p className={comment[2]} key={comment[2]}>{comment[0]}: {comment[1]}</p>
+            );
+          }
+        }, this);
 
       return (
         <div className="modal-image-container">
@@ -98,7 +102,7 @@ class PostShow extends React.Component {
             <div className="post-header">
               <img src={this.props.user.profile_image} />
               <p>{this.props.user.username}</p>
-              <i onClick={this.handleClick} className="fa fa-trash-o" aria-hidden="true"></i>
+            {this.allowPostDelete()}
             </div>
             <div className="post-information">
               <p>{this.props.post.caption}</p>

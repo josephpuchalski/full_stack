@@ -13,6 +13,7 @@ class Api::PostsController < ApplicationController
       @posts << post
     end
 
+
     @posts = @posts.sort_by { |post| post.created_at }.reverse
     render 'api/posts/index'
   end

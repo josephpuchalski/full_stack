@@ -53,13 +53,22 @@ class FeedItem extends React.Component {
     }
   }
 
+
   render() {
     const comments = this.props.post.commentBody.map(
       comment => {
-        return (
-          <span className={comment[2]} key={comment[2]}><span className='feed-post-username'>{comment[0]}</span> {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i></span>
-        );}
-      );
+        if (this.props.currentUser.username === comment[0]) {
+          return (
+            <span className={comment[2]} key={comment[2]}><span className='feed-post-username'>{comment[0]}</span> {comment[1]} <i onClick={this.handleRemoveComment} className="fa fa-times" aria-hidden="true"></i> </span>
+          );
+        } else {
+          return (
+            <span className={comment[2]} key={comment[2]}><span className='feed-post-username'>{comment[0]}</span> {comment[1]} </span>
+          );
+        }
+
+        }, this);
+
         return (
           <div className="feed-post-item">
             <div className='feed-post-header'>
