@@ -17,12 +17,14 @@ There are many components involved in delivering the posts - I decided to break 
 
  - The other is what the user profile provides - an index of all his/her own posts. This is done through PostIndexContainer, PostIndex, PostIndexItem. Finally, I also enabled a modal view of the photo itself and that leverages the PostShowComponent.
 
- ![alt text](https://github.com/josephpuchalski/full_stack/app/docs/photos/posts1.png "Logo Title Text 1")
+ ![POST 1](https://raw.githubusercontent.com/josephpuchalski/full_stack/master/docs/photos/posts1.png)
 
 
 ### Post Feed
 
 The Post feed is the other main part of the app. It organizes all of the content that a user is following. This is what the user will interact with most of the time. On the backend the post feed leverages the same posts table, but uses association of the current user to deliver the content. I accomplished this through the FeedContainer, Feed, Feed components. The feed is also sorted by when the actual post was created by the users you are following.
+
+![POST 2](https://raw.githubusercontent.com/josephpuchalski/full_stack/master/docs/photos/posts2.png)
 
 When a like or comment is delivered on the Post Feed, only the individual post is updated and rendered and not the whole feed itself. This increases efficiency and is optimally what we want.
 
