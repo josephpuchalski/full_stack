@@ -41,7 +41,7 @@ class UserProfile extends React.Component {
     const isAlreadyFollowing = this.props.currentUser.followings.followingIds.includes(this.props.user.id);
 
     if (this.props.currentUser.id === this.props.user.id) {
-      return <li><button className="edit-button">Edit Profile</button></li>;
+      return <li><button className="edit-button btton">Edit Profile</button></li>;
     } else if (isAlreadyFollowing) {
      return <li><button onClick={this.handleUnfollow} className="edit-button">Unfollow</button></li>;
     }
