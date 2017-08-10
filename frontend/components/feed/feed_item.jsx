@@ -78,16 +78,16 @@ class FeedItem extends React.Component {
             <div className='feed-post-detail'>
             <div>
             {this.toggleLike()}
-              <label htmlFor="comment"><i className="fa fa-commenting-o fa-2x" aria-label="true"></i></label>
+              <label htmlFor={this.props.post.id}><i className="fa fa-commenting-o fa-2x" aria-label="true"></i></label>
               </div>
               <span>{this.props.post.likesCount} Likes</span>
               <span><span className='feed-post-username'>{this.props.post.user}</span> {this.props.post.caption}</span>
               {comments}
               <span>{new Date(this.props.post.created_at).toDateString()}</span>
-              <form onSubmit={this.handleAddComment}>
-                <input type="text" id="comment" placeholder="Add Comment" value={this.state.body} onChange={this.update('body')} />
-              </form>
             </div>
+            <form onSubmit={this.handleAddComment}>
+            <input type="text" className="comment" id={this.props.post.id} placeholder="Add a comment..." value={this.state.body} onChange={this.update('body')} />
+            </form>
           </div>
         );
       }

@@ -48,9 +48,18 @@
   flex-direction:column;
   font-size: 14px;
   margin: 15px 0;
+  position:relative;
+  left:15px;
 }
 .feed-post-detail form, textarea{
   width: 600px;
+}
+
+.comment {
+    width: 575px;
+    text-align: left;
+    border: 0px;
+    border-top: 1px solid #efefef;
 }
 
 .feed-post-detail i {
@@ -64,4 +73,9 @@
 
 .feed-post-username {
   font-weight: 700;
+}
+
+.fa-commenting-o:before {
+    position: relative;
+    top: -2px;
 }
